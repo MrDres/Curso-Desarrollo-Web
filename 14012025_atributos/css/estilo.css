@@ -1,0 +1,68 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.contenedor{
+    max-width: 400px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titulo{
+    text-align: center;
+    color: #333;
+}
+
+.tareaLista{
+    list-style-type: none;
+    /* el list style type none lo que hace es quitar los * de cada elemento de la lista */
+    padding: 0;
+}
+
+.tarea{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.deleteBtn{
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover{
+    background: #d62828;
+}
+
+input{
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.botonNueva{
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+

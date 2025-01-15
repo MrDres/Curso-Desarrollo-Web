@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <!-- Creación de una tabla básica, thead crea la cabecera de la tabla, th crea un encabezado -->
+    <table border="1" style="text-align: center; width: 100%; border-collapse:collapse;">
+        <thead style="background-color: aquamarine; text-transform: uppercase;">
+            <tr>
+                <th>producto</th>
+                <th>precio</th>
+                <th>disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>producto A</td>
+                <td>50€</td>
+                <td>disponible</td>
+            </tr>
+            <tr>
+                <td>producto B</td>
+                <td>60€</td>
+                <td>no disponible</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr >
+                <td colspan="3">precio sujeto a cambio</td>
+            </tr>            
+        </tfoot>
+    </table>    
+    <table border="8">
+        <tr>
+            <td><img src="/001_html_002/assets/img/escritorio.jpg" alt="Escritorio oficina" width="300px"></td>
+            <td>columna 2</td>
+            <td rowspan="2">columna 3</td>
+        </tr>
+        <tr>
+            <td colspan="2">esta es extendida</td>            
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>fila 1 coluna 1</td>
+            <td colspan="3">fila 1 columna 2 3 y 4</td>
+        </tr>
+        <tr>
+            <td rowspan="2">fila 2 columna 1 + fila 3 columna 1</td>
+            <td>fila 2 columna 2</td>
+            <td>fila 2 columna 3</td>
+            <td>fila 2 columna 4</td>
+        </tr>
+        <tr>
+            <td>fila 3 columna 2</td>
+            <td>fila 3 columna 3</td>
+            <td>fila 3 columna 4</td>
+        </tr>
+    </table>
+</body>
+</html>

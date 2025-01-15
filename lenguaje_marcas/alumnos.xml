@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curso>
+        <alumno id="1">
+            <nombre></nombre>
+            <apellido1></apellido1>
+            <apellido2></apellido2>
+            <edad></edad>
+            <email></email>
+        </alumno>
+        <alumno id="2">
+            <nombre></nombre>
+            <apellido1></apellido1>
+            <apellido2></apellido2>
+            <edad></edad>
+            <email></email>
+        </alumno>
+        <alumno id="3">
+            <nombre></nombre>
+            <apellido1></apellido1>
+            <apellido2></apellido2>
+            <edad></edad>
+            <email></email>
+        </alumno>
+        <alumno id="4">
+            <nombre></nombre>
+            <apellido1></apellido1>
+            <apellido2></apellido2>
+            <edad></edad>
+            <email></email>
+        </alumno>       
+</curso>

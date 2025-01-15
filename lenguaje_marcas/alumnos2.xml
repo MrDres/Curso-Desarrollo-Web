@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno curso="1º" titulacion="Sistemas">
+        <matricula>2025001</matricula>
+        <nombre>Adriana</nombre>
+        <apellido>Morales</apellido>
+        <edad>21</edad>
+        <grado>Ingeniería Cívil</grado>
+        <telefono>555-555-555</telefono>
+        <email>adriana@gmail.com</email>
+    </alumno>
+    <alumno curso="2º" titulacion="Sistemas">
+        <matricula>2025002</matricula>
+        <nombre>Paco</nombre>
+        <apellido>Jones</apellido>
+        <edad>19</edad>
+        <grado>Filosofía</grado>
+        <telefono>666-555-555</telefono>
+        <email>pacojones@gmail.com</email>
+    </alumno>
+    <alumno curso="1º" titulacion="Sistemas">
+        <matricula>2025005</matricula>
+        <nombre>Rosa</nombre>
+        <apellido>Melano</apellido>
+        <edad>22</edad>
+        <grado>Filosofía</grado>
+        <telefono>666-777-555</telefono>
+        <email>rosmelano@gmail.com</email>
+    </alumno>
+    <alumno curso="3º" titulacion="Ingeniería Industrial">
+        <matricula>2025010</matricula>
+        <nombre>Aitor</nombre>
+        <apellido>Tilla</apellido>
+        <edad>23</edad>
+        <grado>Geología</grado>
+        <telefono>666-555-999</telefono>
+        <email>Aitortilla@gmail.com</email>
+    </alumno>
+</alumnos>

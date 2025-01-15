@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+<body>
+    <!-- Crear un interfaz dinámica con los atributos id, class y data-* para identificar y manipular elementos combinando Css, HTML, Javascript -->
+    
+    <!-- creamos html -->
+
+     <div id="tareaApp" class="contenedor">
+        <h1 class="titulo">Lista de Tareas</h1>
+        <ul id="tareaLista" class="tareaLista">
+            <li class="tarea" data-id="1">Tarea 1
+                <button class="deleteBtn" data-action="delete">Eliminar</button></li>
+            <li class="tarea" data-id="2">Tarea 2
+                <button class="deleteBtn" data-action="delete">Eliminar</button></li>
+        </ul>
+        <input id="nuevaTareaEntrada" type="text" placeholder="Nueva Tarea">
+        <button id="botonNuevaTarea" class="botonNueva">Agregar Tarea</button>
+     </div>
+</body>
+<script src="js/script.js"></script>
+</html>

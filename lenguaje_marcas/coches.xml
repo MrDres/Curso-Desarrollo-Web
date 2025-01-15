@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coches>
+    <coche id="1">
+        <fabricante>Toyota</fabricante>
+        <modelo>Corola</modelo>
+        <año>2002</año>
+        <especificaciones>
+            <motor>2.0L</motor>
+            <potencia>169 HP</potencia>
+            <transmision>automático</transmision>
+            <consumoCiudad>8.4 l / 100Km</consumoCiudad>
+            <consumoCarretera>6.5 l / 100Km</consumoCarretera>
+       </especificaciones>
+       <precio moneda="€">24000</precio>
+       <disponibilidad>true</disponibilidad>
+    </coche>
+    <coche id="2">
+        <fabricante>Ferrari</fabricante>
+        <modelo>F40</modelo>
+        <año>1990</año>
+        <especificaciones>
+            <motor>2.9L</motor>
+            <potencia>471 HP</potencia>
+            <transmision>manual</transmision>
+            <consumoCiudad>10.0 l / 100Km</consumoCiudad>
+            <consumoCarretera>16.5 l / 100Km</consumoCarretera>
+       </especificaciones>
+       <precio moneda="€">224000</precio>
+       <disponibilidad>true</disponibilidad>
+    </coche>
+    <coche id="3">
+        <fabricante>Tesla</fabricante>
+        <modelo>Model 3</modelo>
+        <año>2023</año>
+        <especificaciones>
+            <motor>Electrico</motor>
+            <potencia>289 HP</potencia>
+            <transmision>Automática</transmision>
+            <autonomia>596 Km</autonomia>            
+       </especificaciones>
+       <precio moneda="€">24000</precio>
+       <disponibilidad>true</disponibilidad>
+    </coche>
+    <coche id="4">
+        <fabricante>Peugeot</fabricante>
+        <modelo>206</modelo>
+        <año>2003</año>
+        <especificaciones>
+            <motor>2.0L</motor>
+            <potencia>65 HP</potencia>
+            <transmision>manual</transmision>
+            <consumoCiudad>8.0 l / 100Km</consumoCiudad>
+            <consumoCarretera>10.5 l / 100Km</consumoCarretera>
+       </especificaciones>
+       <precio moneda="€">26000</precio>
+       <disponibilidad>true</disponibilidad>
+    </coche>
+</coches>

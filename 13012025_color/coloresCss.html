@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores CSS</title>
+    <style>
+        /* Esto es un comentario dentro de CSS*/
+        /* Usando color*/
+        /* Usando nombrecolor*/
+        .nombreColor{
+            color:blue
+        }
+        /* usando valor rgb*/
+        .rgbColor{
+            background-color: rgb(255, 100, 0);/*Naranja*/
+            color: rgb(0, 0, 0);
+        }
+        .rgbaColor{
+            background-color: rgba(0, 255, 0, 0.6);
+            color: rgba(255, 255, 255, 1);
+        }
+        .hexColor{
+            background-color:#ffff00;
+            color: #00ff00;
+        }
+        .hslaColor{
+            background-color: hsla(240, 100%, 50%, 0.3);
+            color: hsla(60, 100%, 50%,1)        
+        }
+    </style>
+</head>
+<body>
+    <h1 class="nombreColor">Texto con color por nombre</h1>
+    <div class="rgbColor">Fondo color naranja en RGB y texto en negro</div>
+    <div class="rgbaColor">Fondo color verde y texto en blanco</div>
+    <div class="hexColor">Fondo color amarillo texto color verde</div>
+    <div class="hslaColor">Fondo color azul semi-transparente texto color amarillo</div>
+</body>
+</html>

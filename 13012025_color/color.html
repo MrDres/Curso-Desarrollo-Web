@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color HTML</title>
+</head>
+<body>
+
+<!-- Color se puede usar de varias formas:
+ con el valor del nombre del color ejemplo: red, blue, etc... -->
+<p>Color por nombre</p>
+ <p style="color: red;">Este texto esta en rojo</p><br>
+ <p>Color con sistema RGB valores entre 0 y 255 la notacion es </p>
+ <p>rgb (255,0,0) Rojo puro<br>
+rgb (0,255,0) Verde puro<br>
+rgb (0,0,255) Azul puro
+</p>
+<p style="color: rgb(255,0,0);">Este texto esta en rojo</p><br>
+<p>Color con RGBA, igual que el rgb pero con canal #alfa, el canal alfa va desde 0 que es transparente a 1 que es opaco</p>
+<p style="color: rgba(255,0,0,0.5);">rgba (255,0,0,0.5) Rojo semitransparente</p><br>
+<p>Colores con notacion HEX (hexadecimal) los valores van desde 00 al FF</p>
+
+<ul>
+    <li>#FF0000 Rojo puro</li>    
+    <li>#00FF00 Verde puro</li>
+    <li>#0000FF Azul puro</li>
+</ul>
+<p style="color: #FF0000;">Este texto esta en rojo</p><br>
+<p>Color en Notacion HSL, significa Hue (matiz), saturation (saturacion), lightness (luminosidad)</p>
+<ul>
+    <li>Hue (matiz) se mide en grado (0 a 360)</li>
+    <li>Saturation (saturacion) se mide en porcentaj (0% al 100%)</li>
+    <li>Lightness (luminosidad) se mide en porcentaje (0% al 100%)</li>
+</ul>
+<p>por ejemplo el rojo en HSL es hsl</p>
+<p style="color: hsl(0, 100%, 50%);">Texto en rojo HSL</p><br>
+<p>Notacion de HSLA igual que HSL con un valor #alfa</p>
+<p style="color: hsla(0, 100%, 50%, 0.5);">Este texto esta en rojo semitransparente</p>
+<p>Gradientes de color transiciones suaves entre dos colores</p>
+<ul>
+    <li>linear gradient se aplica en direccion lineal</li>
+    <li>radial gradient se aplica en direccion de un punto</li>
+</ul>    
+<p style="background: linear-gradient(to right, red, yellow);">codigo lineal background:linear-gradient(to right, red, yellow)</p>
+
+<p style="background: radial-gradient(circle,red,yellow);">codigo radial background:radial-gradient(circle, red, yellow)</p>
+<p>Color transparente</p>
+<p style="color: transparent;">Este texto es invisible</p>
+</body>
+</html>

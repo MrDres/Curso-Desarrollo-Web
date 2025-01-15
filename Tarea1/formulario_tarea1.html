@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santamaría_André_Formulario</title>
+</head>
+<body>
+    <!-- Formulario que recopile los datos del usuario utilizando  los elementos y atributos disponibles
+implementa funcionalidades como validación de los campos, control límites y formatos. botón de resetear y enviar
+
+Agregar comentarios de cada parte
+nombre
+correo
+contraseña
+edad
+fecha de nacimiento
+teléfono
+subir foto
+genero
+deportes que practica selección múltiple
+país
+comentarios (máximo de 500)
+apellido_nombre_formulario.pdf -->
+    <form action="/enviar" method="post">
+        <!-- Etiqueta y caja de input de texto para introducir el nombre, le pongo el minimo de tamaño en 2 porque considero que no existen nombres con una sola letra -->
+        <label for="nombre">Introduzca su nombre:</label>
+        <input type="text" id="nombre" required minlength="2" placeholder="ejem. Aitor Tilla">
+        <br><br>
+        <!-- Etiqueta y caja de input de texto para introducir la dirección de email, es obligatorio (required)  -->
+        <label for="email">Introduzca su email:</label>
+        <input type="text" id="email" required placeholder="ejem. aitortilla@gmail.com">
+        <br><br>
+        <!-- Etiqueta y caja de input de tipo password para evitar problemas de seguridad, es obligatorio y por motivos de seguridad se exige un minimo de 12 carácteres -->
+        <label for="password">Introduzca su contraseña</label>
+        <input type="password" id="password" required minlength="12">
+        <br><br>
+        <!-- Etiqueta y caja de input de tipo number para introducir la edad, es obligatorio y para evitar errores lo limito a solo 2 cifras ya que considero poco probable que utilice el formulario personas centenarias -->
+        <label for="age">Introduzca su edad</label>
+        <input type="number" id="age" min="1" required maxlength="2">
+        <br><br>
+        <label for="fecha de nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fecha" required>
+        <br><br>
+        <!-- Etiqueta y caja de input tipo tel para meter numeros de telefono, obligatorio y con un máximo de 12  -->
+        <label for="phone">Introduzca su telefono</label>
+        <input type="tel"  required maxlength="12">
+        <br><br>
+        <!-- Etiqueta y caja de seleccion de archivos para poder subir foto -->
+        <label for="fotos" id="foto">Subir foto</label>
+        <input type="file" name="foto" id="foto">
+        <br><br>
+        <label for="genero">Selecciona tu genero:</label>
+        <input type="radio" name="genero" id="masculino" value="masculino">
+        <label for="genero1">Masculino</label>
+        <input type="radio" name="genero" id="femenino" value="femenino">
+        <label for="genero2">Femenino</label>
+        <input type="radio" name="genero" id="otro" value="otro">
+        <label for="genero3">Otro</label><br><br>
+        <!-- Etiqueta y caja de seleccion de opciones multiple de deportes  -->
+        <label for="sports">Deportes practicados</label>
+        <select name="sports" id="sports" multiple>
+            <option value="futbol">Futbol</option>
+            <option value="baloncesto">Baloncesto</option>
+            <option value="rugby">Rugby</option>
+            <option value="natacion">Natación</option>
+        </select><br><br>
+        <!-- Etiqueta y caja de seleccion simple de pais -->
+        <label for="country">Elige pais:</label>
+        <select name="country" id="country">
+            <option value="futbol">España</option>
+            <option value="baloncesto">Brasil</option>
+            <option value="rugby">Alemania</option>
+            <option value="natacion">Congo</option>
+        </select><br><br>
+        <!-- Etiqueta y caja de texto para dejar mensajes con limite de 500 carácteres -->
+        <label for="mensaje">Escribe tu mensaje:</label>
+        <textarea name="comentario" id="comentario" placeholder="Escribe aquí tu comentario" maxlength="500"></textarea>
+        <br><br>
+        <!-- Boton enviar -->
+        <button type="submit">Enviar</button>
+        <!-- Boton resteo formulario -->
+        <button type="reset">Resetear</button>
+    </form>
+    
+</body>
+</html>

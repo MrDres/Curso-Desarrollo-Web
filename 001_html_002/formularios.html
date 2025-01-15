@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <!-- form es la etiqueta padre donde estan todos los elementos del formulario incluido el enviar -->
+     <!-- el atributo action es la url donde se enviara la información -->
+      <!-- el atributo method son los metodos de envio de la informacion y son dos GET y POST -->
+       <!-- el atributo id es un identificador y siempre tiene que ser único -->
+        
+     <form action="/enviar" method="post">
+        <h1>EJEMPLO DE CAJAS PARA INTRODUCIR TEXTO</h1>
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" required minlength="3" placeholder="ejem. Juan Perez">
+        <br><br>
+        <label for="email">Email del cliente:</label>
+        <input type="text" id="email" required placeholder="ejem. paco@jones.com" >
+        <br><hr><br>
+        <h1>EJEMPLO DE SELECTOR DE FECHAS</h1>
+        <label for="fecha de nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fecha" required>
+        <br><hr><br>
+        <h1>EJEMPLO DE LISTA DE OPCIONES</h1>
+        <label for="ciudad">Ciudad</label>
+        <select name="ciudad" id="ciudad">
+            <option value="pontevedra">Pontevedra</option>
+            <option value="vigo">Vigo</option>
+            <option value="moana">Moaña</option>
+            <option value="cangas">Cangas</option>
+        </select>
+        <br><hr><br>
+        <h1>EJEMPLO DE LISTA DE OPCIONES CON POSIBILIDAD MULTIPLE</h1>
+        <label for="provincia">Provincia</label>
+        <select name="provincias" id="provincias" multiple>
+            <option value="pontevedra">Pontevedra</option>
+            <option value="lugo">Lugo</option>
+            <option value="acoruna">A Coruña</option>
+            <option value="ourense">Ourense</option>
+        </select>
+        <br><br><hr>
+        <h1>EJEMPLO DE TEXTAREA</h1><br>
+        <label for="mensaje">Escribe tu mensaje:</label>
+        <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje"></textarea>
+        <br><br>
+        <label for="informacion">Coloca aquí tu curriculum</label>
+        <textarea name="info" id="informacion" rows="10" cols="100"  placeholder="Tu curriculum va aquí" ></textarea>
+        <br><br><hr>
+        <h1>EJEMPLO DE SELECTOR DE ARCHIVO</h1>
+        <label for="frontdni" id="frontdni">Coloca el frontal</label>
+        <input type="file" name="caradni" id="caradni">
+        <label for="backdni">Coloca el reverso</label>
+        <input type="file" name="backdni" id="backdni">
+        <br><hr><br>
+        <h1>EJEMPLO DE SELECTOR DE ARCHIVOS MULTIPLE</h1>
+        <label for="fotos" id="fotos">Subir dos fotos o mas</label>
+        <input type="file" name="2fotos" id="2fotos" multiple>
+        <br><hr><br>
+        <h1>EJEMPLO DE SELECTOR DE RANGO</h1>
+        <label for="volumen" id="volumen">Aumenta el volumen</label>
+        <input type="range" name="a" id="a" value="10">
+        <br><hr><br>
+        <h1>EJEMPLO DE SELECTOR DE COLOR</h1>
+        <label for="colorfavorito">Escoje tu color favorito</label>
+        <input type="color" id="color" value="#2271b3">
+        <br><hr><br>
+        <h1>EJEMPLOS DE CHECKBOX</h1><br><br>
+        <label for="casa">casa</label>
+        <input type="checkbox" name="uno" id="1"><br>
+        <label for="casa">apartamento</label>
+        <input type="checkbox" name="dos" id="2"><br>
+        <label for="casa">atico</label>
+        <input type="checkbox" name="tres" id="3"><br><hr><br>
+        <h1>EJEMPLOS DE BOTONES RADIO</h1><br><br>
+        <label for="selector1">Audi</label>
+        <input type="radio" name="audi"><br>
+        <label for="selector2">Ford</label>
+        <input type="radio" name="ford"><br>
+        <label for="selector3">Toyota</label>
+        <input type="radio" name="toyota"><br>
+        <br><hr><br>
+        <h1>EJEMPLO DE BOTONES RADIO CON UNA UNICA OPCION (AGRUPADOS)</h1><br><br>
+        <input type="radio" name="edad" id="edad1" value="9">
+        <label for="edad1">0 - 9</label><br>
+        <input type="radio" name="edad" id="edad2" value="9">
+        <label for="edad2">10 - 12</label><br>
+        <input type="radio" name="edad" id="edad3" value="9">
+        <label for="edad3">12 - 19</label><br><hr><br>
+        <h1>EJEMPLO DE ETIQUETA Y CAJA PARA CONTRASEÑA</h1>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="password" required minlength="6">
+        <br><hr><br>
+        <h1>EJEMPLO DE BOTON DE ENVIAR FORMULARIO</h1>        
+        <button type="submit">Enviar</button>
+        <br><hr><br>
+        <h1>EJEMPLO DE BOTON DE BORRAR (RESETEAR FORMULARIO)</h1>
+        <button type="reset">Borrar</button>
+        <br><hr><br>
+        <h1>EJEMPLO DE BOTON CON ONCLICK</h1>
+        <button type="button" onclick="alert('Buenos días people')">Pincha aquí</button>
+        <br><hr><br>
+        <!-- el atributo onclick, onmouseover, onmouseout es lo llamado eventos -->
+        <h1>EJEMPLO DE BOTON CON ONMOUSEOVER Y ONMOUSEOUT</h1>
+        <button type="button" onmouseover="alert('Hoy es viernes')" onmouseout="alert('y el cuerpo lo sabe')">Que día es hoy?</button>
+        <br><hr><br>
+     </form>    
+</body>
+</html>

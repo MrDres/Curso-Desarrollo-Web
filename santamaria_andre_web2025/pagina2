@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esto es una segunda página">
+    <meta http-equiv="refresh" content="1">
+    <title>Página 02</title>
+</head>
+<body>
+    <h3>Esto es un subtitulo</h3>
+	<p>Triste destino para el <strong>Dinoseto</strong>, que va camino de la extinción. La icónica escultura vegetal que fue la reina de los selfies hace siete años se muere lentamente en el parque de la Alameda, en la <p style="color: gold;">plaza de Compostela</p>, a donde fue trasladada provisionalmente por las obras en la <span style="font-size:50px; color:blue;"><i>Porta </i>do Sol</span>.</p>
+	<p>H<sub>2</sub>O</p>
+</body>
+</html>

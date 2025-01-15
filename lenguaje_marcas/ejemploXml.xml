@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejemplo genérico de la estructura de un xml-->
+<biblioteca>
+    <libro>
+        <titulo>Cien años de soledad</titulo>
+        <autor>García Márquez</autor>
+        <isbn>00000</isbn>
+        <editorial>Planeta</editorial>
+    </libro>
+    <revista>
+        <titulo></titulo>
+        <editorial></editorial>
+    </revista>
+</biblioteca>
