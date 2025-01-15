@@ -1,0 +1,12 @@
+:root{
+    --primary-color:#003366;
+    --secondary-color:#2E8B57;
+    --terciary-color:#F4A460;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
