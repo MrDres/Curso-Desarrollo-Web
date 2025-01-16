@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Nombre/author, Description, Palabras Clave -->
+    <title>Imágenes</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- IMAGENES RASTERIZADAS / BITMAP
+     Utilizadas principalmente para fotografia e imagenes complejas
+     formatos: 
+     
+     - jpg/jpeg (join photographic expert group) su extension es .jpg o .jpeg, si la reduces/amplias pierde calidad, puede usarse con gradientes y no soporta transparencias.
+     
+     - png (portable network group) su extension es .png, tiene compresion de alta calidad sin perdida, soporta transparencia (alfa), se usa para gráficos, logotipos, iconos, etc...
+
+     - gif (graphics interchange format) su extension es .gif, soporta animacion, su paleta de color esta limitada a 256 colores y utiliza compresion sin perdida, no se usa en fotografia, se usa en imagenes sencillas, permite transparencia, sirve para iconos, graficos pequeños.
+
+     - webp (creada por google) su extension es .webp, puede incluir transparencia, menor tamaño que jpg o png, debe estar al tamaño de uso.
+          
+     - bmp (Bitmap) su extension es .bmp son imagenes rasterizadas (estandar) son muy imagenes muy pesadas, no se usan en web debido a su peso.
+
+     IMAGENES VECTORIALES
+
+     - svg (scalable vector graphic) su extension es .svg, es un formato vectorial, no se rasteriza, al ser vectores se escala sin perdida de calidad, se edita como un archivo xml, se usa para iconos, logotipos, graficos interactivos, escalables.
+
+     - eps (encapsulated postscript) su extension es .eps,pueden tener formato rgb o cymk (cian, magenta, amarillo y negro) no pierde calidad y no suele utilizarse para web, es mas utilizada en imprenta.
+
+     - tiff (tag image file format) su extension es .tif, formato rgb/cymk, admite transparencias, no se utiliza en webs es utilizada principalmente en imprentas
+
+     IMAGENES ESPECIALES
+
+     - ico su extension es .ico se utilizan para iconos como pueden ser los favicons.
+
+     - heif (high efficiency image format) su extension es .heif o heic tiene mejor compresion que jpg y mantiene la calidad, se utiliza en dispositivos móviles pero no esta generalizada en web
+
+     - avif (av1 image file format) basada en code de video av1, mejor compresion que jpg y png, soporta transparencia, tiene alta definicion, profundidad de color de 12bits, utilizada en aplicaciones moviles
+     -->
+
+     <!-- PARA INCLUIR IMAGENES EN WEB
+      scr  (ubicacion)
+      alt (texto alternativo) 
+      width/height (tamaño)
+      loading (carga diferida)
+      style (estilo en css)-->
+
+      <img src="assets/img/imagen.jpg" alt="DESCRIPCION" width="500" height="300" title="informacion adicional cuando se coloca el cursor sobre la imagen">
+      
+      <img src="assets/img/celta.png" alt="Escudo del Celta de Vigo" title="El escudo del mejor equipo del mundo" width="10%">
+
+      <img src="assets/img/bailongo.gif" alt="It's not inusual to be love by anyone" width="10%">
+
+      <video src="assets/12887771_1080_1920_30fps.mp4" width="200" height="800" controls></video>
+</body>
+</html>
