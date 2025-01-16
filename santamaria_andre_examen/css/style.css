@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    border: 5px ;
+    padding: 20px;
+    background-color: chartreuse;
+}
+
+.navigationBar{
+    display: flex;
+    width: 100%;
+    background-color: aquamarine;  
+    
+}
+.info{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: chocolate;
+}
+
+footer{
+    background-color: blueviolet;
+}
