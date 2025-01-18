@@ -1,18 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="André Santamaría">
-        <meta name="keywords" content="viajes, negocios, business, primera clase, lujo, puntualidad">
-        <meta name="description" content="Agencia de viajes de negocios">
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <title>Vuela al siguiente nivel y descubre un mundo de posibilidades</title>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Clásico</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas:
+                "cabecera cabecera"
+                "navegacion navegacion"
+                "principal barra-lateral"
+                "institucional institucional";
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-columns: 3fr 1fr;
+            height: 100vh;
+        }
+
+        header {
+            grid-area: cabecera;
+            background-color: #d2b48c;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        nav {
+            grid-area: navegacion;
+            background-color: #f4a460;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        main {
+            grid-area: principal;
+            background-color: #ffebcd;
+            padding: 1rem;
+        }
+
+        aside {
+            grid-area: barra-lateral;
+            background-color: #f5deb3;
+            padding: 1rem;
+        }
+
+        footer {
+            grid-area: institucional;
+            background-color: #deb887;
+            text-align: center;
+            padding: 0.5rem;
+        }
+    </style>
 </head>
-<header>
-    <img src="assets/img/logo_business_airlines.jpg" style="width: ;"
-</header>
 <body>
-    
+    <header>Cabecera</header>
+    <nav>Barra de Navegación</nav>
+    <main>Información Principal</main>
+    <aside>Barra Lateral</aside>
+    <footer>Institucional</footer>
 </body>
 </html>

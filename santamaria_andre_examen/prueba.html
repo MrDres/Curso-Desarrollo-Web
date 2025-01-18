@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="André Santamaría">
+    <meta name="keywords" content="viajes, negocios, business, primera clase, lujo, puntualidad">
+    <meta name="description" content="Agencia de viajes de negocios">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vuela al siguiente nivel y descubre un mundo de posibilidades.</title>
+</head>
+
+<body>
+    <header id="inicio">
+        <img src="assets/img/logo_business_airlines.jpg" alt="Logotipo de Business Airlines"
+            title="Agencia de viajes Business Airlines">
+        <p>Business Airlines, vuela al siguiente nivel y descubre un mundo de posibilidades.</p>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a class="listNav" href="#inicio">Inicio</a></li>
+            <li><a class="listNav" href="#destinos">Destinos</a></li>
+            <li><a class="listNav" href="#reservas">Reservas</a></li>
+            <li><a class="listNav" href="#ofertas">Ofertas</a></li>
+            <li><a class="listNav" href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="contenido">
+        <main>
+            <article>
+                <h1>Explora el mundo con Business Airlines</h1>
+                <h2>Bienvenidos a Business Airlines</h2>
+                <h3>Conectamos el mundo con elegancia y eficiencia</h3>
+                <p>En Business Airlines, nos especializamos en ofrecer experiencias de vuelo incomparables para viajeros
+                    de negocios y clientes exigentes.<br> Nuestra misión es proporcionar un servicio de primera clase que
+                    combina lujo, comodidad y puntualidad en cada trayecto.</p>
+            </article>
+            <article class="servicios">
+                <h3>Vuelos Ejecutivos</h3>
+                <p>Disfruta de viajes exclusivos diseñados para maximizar tu tiempo y comodidad.<br>
+                 Nuestros vuelos ejecutivos ofrecen espacios amplios, asientos reclinables, opciones gastronómicas
+                    gourmet y entretenimiento a bordo de alta calidad.<br>
+                Cada detalle está pensado para garantizar una experiencia excepcional desde el despegue hasta el
+                    aterrizaje.</p>
+            </article>
+            <article class="servicios">
+                <h3>Servicios incluidos en nuestros vuelos:</h3>
+                <ol>
+                    <li>Asientos ergonómicos totalmente reclinables.</li>
+                    <li>Conectividad Wi-Fi de alta velocidad durante todo el vuelo.</li>
+                    <li>Menú gourmet con opciones personalizadas.</li>
+                    <li>Sistema de entretenimiento con pantalla individual.</li>
+                    <li>Servicio de atención personalizada a bordo.</li>
+                    <li>Kit de confort premium para viajes largos.</li>
+                </ol>
+            </article>
+            <article class="servicios">
+                <h3>Servicios Premium</h3>
+                <p>Accede a una amplia gama de servicios premium que hacen de tu viaje una experiencia placentera y sin
+                    estrés.<br>
+                Disfruta de salas VIP exclusivas, check-in prioritario, embarque preferencial y atención
+                    personalizada durante todo el viaje.<br>
+                Nuestro equipo está comprometido a satisfacer cada una de tus necesidades.</p>
+            </article>
+            <article class="servicios">
+                <img src="assets/img/flota.jpg" alt="">
+                <h3>Flota Moderna</h3>
+                <p>Contamos con una flota de aviones de última generación equipados con la más avanzada tecnología en
+                    seguridad y confort.<br>
+                Cada aeronave está diseñada para ofrecer un vuelo silencioso, eficiente y seguro, asegurando un viaje
+                    placentero en todo momento.</p>
+            </article>
+            <article class="servicios" id="ofertas">
+                <h3>Ofertas Especiales</h3>
+                <p>Descubre nuestras ofertas especiales.</p><br>
+                <table>
+                    <tr>
+                        <th>CIUDAD</th>
+                        <th>PRECIO</th>
+                        <th>DURACION DEL VUELO</th>
+                    </tr>
+                    <tr>
+                        <td>VIGO</td>
+                        <td>600€</td>
+                        <td>2 horas 30 minutos</td>
+                    </tr>
+                    <tr>
+                        <td>TOKYO</td>
+                        <td>1200€</td>
+                        <td>16 horas 50 minutos</td>
+                    </tr>
+                    <tr>
+                        <td>CUSPEDRIÑOS</td>
+                        <td>100€</td>
+                        <td>30 minutos</td>
+                    </tr>
+                </table>
+
+
+        </main>
+        <aside>
+            <article class="servicios">
+                <h3>Reserva Fácil</h3>
+                <p>Planificar tu próximo viaje nunca fue tan sencillo.</p>
+                <p>Nuestro sitio web intuitivo permite comprar boletos de forma rápida, segura y personalizada.</p>
+                <p>Además, ofrecemos asistencia en línea para ayudarte en cada paso del proceso de reserva.</p>
+
+                <section id="reservas" class="reservas">
+                    <form action="#">
+                        <div class="formReservas">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="formReservas">
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" name="correo" required placeholder=" Introduzca su correo" length="50">
+                        </div>
+                        <div class="formReservas">
+                            <label for="destino">Seleccion de destino:</label>
+                            <select name="destino" id="destino" required>
+                                <option value="Vigo">Vigo</option>
+                                <option value="Tokio">Tokio</option>
+                                <option value="Nueva York">Nueva York</option>
+                                <option value="Cuspedriños">Cuspedriños</option>
+                            </select>
+                        </div>
+                        <div class="formReservas">
+                            <label for="fecha">Fecha de vuelo:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="formReservas">
+                            <button class="btn" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </aside>
+    </div>
+    <footer id="contacto">
+        <h3>Nuestra Dirección</h3>
+        <p>Business Airlines S.A. Avenida de la Aviación 1234, Piso 10 Ciudad Global, País Internacional</p>
+        <p><strong>Teléfono:</strong> +123 456 7890 <strong>Correo: </strong><a class="email"
+                href="mailto:contacto@businessairlines.com">contacto@businessairlines.com</a></p>
+        
+    </footer>
+</body>
+
+</html>
