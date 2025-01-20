@@ -172,6 +172,7 @@
 
         .reservas {
             display: inline-flexbox;
+            margin-top: 1rem;
         }
 
         .socialMedia {
@@ -188,7 +189,11 @@
 
         .socialItem p {
             color: var(--azul-oscuro);
+        }
 
+        hr {
+            border: 3px solid var(--azul);
+            border-radius: 5px;
         }
     </style>
 
@@ -214,8 +219,11 @@
         <main>
             <article>
                 <h1>Explora el mundo con Business Airlines</h1>
+                <hr>
                 <h2>Bienvenidos a Business Airlines</h2>
+                <hr>
                 <h3>Conectamos el mundo con elegancia y eficiencia</h3>
+                <hr><br>
                 <p>En Business Airlines, nos especializamos en ofrecer experiencias de vuelo incomparables para viajeros
                     de negocios y clientes exigentes.<br> Nuestra misión es proporcionar un servicio de primera clase
                     que
@@ -225,6 +233,7 @@
             </article>
             <article class="servicios">
                 <h3>Vuelos Ejecutivos</h3>
+                <hr><br>
                 <p>Disfruta de viajes exclusivos diseñados para maximizar tu tiempo y comodidad.<br>
                     Nuestros vuelos ejecutivos ofrecen espacios amplios, asientos reclinables, opciones gastronómicas
                     gourmet y entretenimiento a bordo de alta calidad.<br>
@@ -233,17 +242,21 @@
             </article>
             <article class="servicios">
                 <h3>Servicios incluidos en nuestros vuelos:</h3>
-                <ol>
-                    <li>Asientos ergonómicos totalmente reclinables.</li>
-                    <li>Conectividad Wi-Fi de alta velocidad durante todo el vuelo.</li>
-                    <li>Menú gourmet con opciones personalizadas.</li>
-                    <li>Sistema de entretenimiento con pantalla individual.</li>
-                    <li>Servicio de atención personalizada a bordo.</li>
-                    <li>Kit de confort premium para viajes largos.</li>
-                </ol>
+                <hr><br>
+                <section class="listaServicios">
+                    <ol>
+                        <li>Asientos ergonómicos totalmente reclinables.</li>
+                        <li>Conectividad Wi-Fi de alta velocidad durante todo el vuelo.</li>
+                        <li>Menú gourmet con opciones personalizadas.</li>
+                        <li>Sistema de entretenimiento con pantalla individual.</li>
+                        <li>Servicio de atención personalizada a bordo.</li>
+                        <li>Kit de confort premium para viajes largos.</li>
+                    </ol>
+                </section>
             </article>
             <article class="servicios">
                 <h3>Servicios Premium</h3>
+                <hr><br>
                 <p>Accede a una amplia gama de servicios premium que hacen de tu viaje una experiencia placentera y sin
                     estrés.<br>
                     Disfruta de salas VIP exclusivas, check-in prioritario, embarque preferencial y atención
@@ -251,18 +264,24 @@
                     Nuestro equipo está comprometido a satisfacer cada una de tus necesidades.</p>
             </article>
             <article class="servicios">
-                <img src="assets/img/flota-redimension.jpg" alt="imagen de la flota de aviones de Business Airlines"
-                    title="Nuestra flota de aviones">
+                
                 <h3>Flota Moderna</h3>
+                <hr><br>
                 <p>Contamos con una flota de aviones de última generación equipados con la más avanzada tecnología en
                     seguridad y confort.<br>
                     Cada aeronave está diseñada para ofrecer un vuelo silencioso, eficiente y seguro, asegurando un
                     viaje
-                    placentero en todo momento.</p>
+                    placentero en todo momento.</p><br>
+                    <img src="assets/img/flota-redimension.jpg" alt="imagen de la flota de aviones de Business Airlines"
+                    title="Nuestra flota de aviones">
             </article>
             <article class="servicios" id="ofertas">
-                <h3>Ofertas Especiales</h3>
-                <p>Descubre nuestras ofertas especiales.</p><br>
+                <h3 style="color: goldenrod; text-decoration: underline; text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;">Ofertas Especiales</h3>
+               <hr><br>
+                <p>Descubre nuestras <strong>ofertas especiales.</strong></p><br>
                 <table class="tablaOfertas" style="margin: auto;">
                     <thead>
                         <tr>
@@ -322,22 +341,24 @@
                 <h3>Reserva Fácil</h3>
                 <p>Planificar tu próximo viaje nunca fue tan sencillo.</p>
                 <p>Nuestro sitio web intuitivo permite comprar boletos de forma rápida, segura y personalizada.</p>
-                <p>Además, ofrecemos asistencia en línea para ayudarte en cada paso del proceso de reserva.</p>
+                <p>Además, ofrecemos asistencia en línea para ayudarte en cada paso del proceso de reserva.</p><br>
+                <hr>
 
                 <section class="reservas">
                     <form action="#">
                         <div class="formReservas">
-                            <label for="nombre">Nombre completo:</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="nombre"><strong>Nombre completo:</strong></label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Introduzca su nombre">
                         </div>
                         <div class="formReservas">
-                            <label for="correo">Correo electrónico:</label>
+                            <label for="correo"><strong>Correo electrónico:</strong></label>
                             <input type="email" id="correo" name="correo" required placeholder=" Introduzca su correo"
                                 length="50">
                         </div>
                         <div class="formReservas">
-                            <label for="destino">Seleccion de destino:</label>
+                            <label for="destino"><strong>Selección de destino:</strong></label>
                             <select name="destino" id="destino" required>
+                                <option value="default">Seleccione una opción</option>
                                 <option value="Vigo">Vigo</option>
                                 <option value="Tokio">Tokio</option>
                                 <option value="Nueva York">Nueva York</option>
@@ -345,16 +366,16 @@
                             </select>
                         </div>
                         <div class="formReservas">
-                            <label for="fecha">Fecha de vuelo:</label>
+                            <label for="fecha"><strong>Fecha de vuelo:</strong></label>
                             <input type="date" id="fecha" name="fecha" required>
                         </div>
                         <div class="formReservas">
                             <button class="btn" type="submit">Enviar</button>
+                            <button class="btn" type="reset">Borrar</button>
                         </div>
                     </form>
                 </section>
             </article>
-
         </aside>
     </div>
     <footer id="contacto">
@@ -383,7 +404,6 @@
                 </a>
             </div>
         </div>
-
     </footer>
 </body>
 
