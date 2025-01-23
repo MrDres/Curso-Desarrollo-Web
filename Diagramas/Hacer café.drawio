@@ -1,0 +1,60 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0" version="26.0.6">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="786" dy="421" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-0" value="PREPARAR CAFÉ&lt;div&gt;&lt;ol&gt;&lt;li&gt;&amp;nbsp;INICIO: DECIDIR HACER CAFÉ&lt;/li&gt;&lt;li&gt;VERIFICAR SI HAY CAFÉ EN CASA&lt;/li&gt;&lt;ol&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;/ol&gt;&lt;ul&gt;&lt;ul&gt;&lt;li&gt;Si hay, continuar&lt;/li&gt;&lt;li&gt;Si no, comprar café&lt;/li&gt;&lt;ul&gt;&lt;ul&gt;&lt;ul&gt;&lt;ul&gt;&lt;ul&gt;&lt;ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ol&gt;&lt;li&gt;hervir agua&lt;/li&gt;&lt;li&gt;colocar cafe en la cafetera o filtro&lt;/li&gt;&lt;li&gt;agregar agua caliente al cafe&lt;/li&gt;&lt;li&gt;servir cafe en la taza&lt;/li&gt;&lt;li&gt;fin: disfruta el cafe&lt;/li&gt;&lt;/ol&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="20" width="310" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-1" target="rTgGpoYsP9CJOcHH_V7p-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-1" value="DECIDIR HACER CAFE" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="290" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-2" target="rTgGpoYsP9CJOcHH_V7p-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-2" target="rTgGpoYsP9CJOcHH_V7p-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-2" value="VERIFICAR SI HAY CAFÉ" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="520" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-3" target="rTgGpoYsP9CJOcHH_V7p-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="740" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="210" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-3" value="COMPRAR CAFÉ" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="520" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-5" target="rTgGpoYsP9CJOcHH_V7p-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-5" value="COLOCAR CAFE EN LA CAFETERA O FILTRO" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="680" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-6" target="rTgGpoYsP9CJOcHH_V7p-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-6" value="AGREGAR AGUA CALIENTE" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="820" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="rTgGpoYsP9CJOcHH_V7p-7" target="rTgGpoYsP9CJOcHH_V7p-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-7" value="SERVIR EL CAFÉ" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="950" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="rTgGpoYsP9CJOcHH_V7p-8" value="DISFRUTAR DEL CAFÉ&lt;div&gt;(FIN)&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="350" y="1100" width="100" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
