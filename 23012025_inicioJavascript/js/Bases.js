@@ -72,3 +72,12 @@ console.log(typeof num1);
 let convertido=Number(num1);
 console.log(convertido);
 console.log(typeof convertido);
+
+//Reglas de nombre de variables
+//No pueden empezar con numeros
+//let 1variable = 25;
+//No pueden tener espacios entre palabras
+//let nombre completo = "Juan";
+//No pueden comenzar con doble guión
+//let __nombre = "Juan"; let --nombre = "Juan";
+// Es case sensitive
