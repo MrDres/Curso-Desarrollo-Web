@@ -81,3 +81,49 @@ console.log(typeof convertido);
 //No pueden comenzar con doble guión
 //let __nombre = "Juan"; let --nombre = "Juan";
 // Es case sensitive
+
+//Operadores Aritméticos
+//Suma +
+//Resta -
+//Multiplicacion *
+//Division /
+//modulo o resto %
+let a = 10, b = 3; //esto es una declaracion conjunta de variables es igual a poner let a=10; let b=3;
+console.log("Suma: ", a+b);
+console.log("Resta: ", a-b);
+console.log("Multiplicacion: ", a*b);
+console.log("Division: ", a/b);
+console.log("Modulo: ", a%b);
+
+//Operadores de comparación
+//evaluan relaciones 
+// igualdad debil == (compara valores sin tener en cuenta el tipo de dato)
+// igualdad estricta === (compara valores y tipo de dato)
+// desigualdad debil != (compara valores sin tener en cuenta el tipo de dato)
+// desigualdad estricta !== (compara valores y tipo de dato)
+// mayor que >
+// menor que <
+// mayor o igual >=
+// menor o igual <=
+
+console.log(5 == "5"); //true
+console.log(5 === "5"); //false
+
+//Operadores Lógicos
+// && (AND) ambas condiciones deben ser verdaderas
+// || (OR) al menos una condicion debe ser verdadera
+// ! (NOT) invierte el valor de una condicion
+
+console.log(true && true); //true   
+console.log(true && false); //false
+console.log(true || false); //true
+console.log(false || false); //false
+console.log(!true); //false
+console.log(!false); //true
+
+//operadores ternarios
+// es una forma abreviada de escribir una condicion -- condicion? valor_si_verdadero : valor_si_falso
+
+let edad=20;
+let mensaje=(edad>=18)? "Eres mayor de edad": "Eres menor de edad";
+console.log(mensaje);
