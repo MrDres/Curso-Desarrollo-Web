@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Número primo</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Introduzca un número");
+
+      console.log("Número: ", num);
+      let primo = true;
+
+      if (
+        num % 3 == 0 ||
+        num % 5 == 0 ||
+        num % 2 == 0 ||
+        num % 11 == 0 ||
+        num % 7 == 0
+      ) {
+        if (num == 3 || num == 5 || num == 2 || num == 11 || num == 7) {
+          console.log("es primo");
+        } else {
+          console.log("NO es primo");
+        }
+      } else {
+        console.log("es primo");
+        primo = true;
+      }
+    </script>
+  </body>
+</html>

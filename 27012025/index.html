@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>control de flujo</title>
+  </head>
+  <body>
+    <script>
+      // let numero1 = parseInt(prompt("Introduzca el primer número: "));
+      // let numero2 = parseInt(prompt("Introduzca el segundo número: "));
+      // let suma = numero1 + numero2;
+      // console.log("La suma de los números es: ", suma);
+      //Esto se ve en botón derecho inspeccionar, consola
+
+      //   let numero = parseInt(prompt("Introduce un número: "));
+      //   if (numero > 0) {
+      //     console.log("El número es positivo");
+      //   } else if (numero < 0) {
+      //     console.log("El número es negativo");
+      //   } else {
+      //     console.log("El número es cero");
+      //   }
+      //   let numero = parseInt(prompt("Introduce un número: "));
+      //   console.log(
+      //     numero > 0 ? "Positivo" : numero < 0 ? "numero negativo" : "cero"
+      //   );
+
+      //   let edad = 20;
+      //   let mensaje = edad >= 18 ? "Mayor edad":"Menor edad"
+      //   let year = parseInt(prompt("Introduzca un año"));
+      //   if ((year % 4 == 0 && year % 100 !== 0) || year / 400 === 0) {
+      //     console.log("El año es bisiesto");
+      //   } else {
+      //     console.log("El año NO es bisiesto");
+      //   }
+      //   console.log(
+      //     (year % 4 == 0 && year % 100 !== 0) || year / 400 === 0
+      //       ? "Año bisiesto"
+      //       : "NO bisiesto"
+      //   );
+      //   let num1 = parseInt(prompt("Introduce un PRIMER número: "));
+      //   let num2 = parseInt(prompt("Introduce un SEGUNDO número: "));
+      //   let producto = num1 * num2;
+      //   console.log("El producto de los números es: ", producto);
+      //   let numero = parseInt(prompt("Introduce tabla número"));
+      //   let i = 1;
+      //   while (i <= 10) {
+      //     console.log(`${numero} x ${i} = ${numero * i}`);
+      //     i++;
+      //   }
+
+      let num = parseInt(prompt("Introduce tabla número: "));
+
+      for (let i = 1; i <= 10; i++) {
+        console.log(num, "x", i, "=", num * i);
+      }
+
+      console.log("FIBONACCI");
+      let numeroA = 0;
+      let numeroB = 1;
+      let numerox = numeroA + numeroB;
+      console.log(numeroA);
+      console.log(numeroB);
+      console.log(numerox);
+
+      while (numerox <= 55) {
+        numeroA = numeroB;
+        numeroB = numerox;
+        numerox = numeroA + numeroB;
+        console.log(numerox);
+      }
+    </script>
+  </body>
+</html>

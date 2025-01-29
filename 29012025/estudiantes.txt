@@ -1,0 +1,48 @@
+Scrip para estudiantes y calificaciones
+
+1. Crear lista (array) de objetos llamada "estudiantes"
+    Cada objeto representa un estudiante con:
+    -  un atributo llamada "nombre" (cadena texto)
+    -  un atributo llamada "calificaciones" (lista de números)
+2. Definir una función llamada "calcularPromedio" que recibe una lista de calificaciones como parámetro.
+    a. Dentro de la función:
+        i. Sumar todas las calificaciones usando un bucle o una función de acumulación.
+        ii. Dividir la suma total por la cantidad de calificaciones.
+    b. Retornar el promedio calculado.
+3. Crear una nueva lista llamada "estudiantesConPromedio" a partir de la lista "estudiantes" usando mapeo.
+    a. Para cada estudiante en la lista "estudiantes":
+        i. Calcular su promedio usando la función "calcularPromedio".
+        ii. Redondear el promedio a dos decimales.
+        iii. Crear un nuevo objeto que contenga:
+            - Todos los atributos originales del estudiante.
+            - El promedio calculado.
+            - Un estado de "aprobado" basado en si el promedio es mayor o igual a 75.
+                *SI promedio >= 75, entonces "Aprobado = SI"
+                *SI NO "Aprobado = NO".
+4. Crear una lista llamada "estudiantesAprobados" filtrando sólo los estudiantes de "estudiantesConPromedio"
+cuyo estado de "Aprobado = SI".
+5. Imprimir en la pantalla:
+    a. Lista completa de estudiantes con sus promedios y estados.
+    b. Lista de estudiantes que aprobaron.
+
+EXPLICACIONES PASO A PASO:
+
+    1.- CREACIÓN DEL ARRAY "estudiantes"
+        { nombre: "Juan", calificaciones: [80, 85, 90] },
+    2.- FUNCIÓN "calcularPromedio"
+        Recibe un array de calificaciones.
+        Suma todos los elementos del array usando reduce()-->acumula el valor.
+        Divide suma por la cantidad de calificaciones usando calificaciones.lenght.
+        Devuelve el promedio calculado.
+    3.- Transformación con map:
+        Usamos map para recorrer cada estudiante y añade cosas:
+            El promedio redondeado a 2 decimales usanto (.tofixed(2)).
+            Estado de "aprobado" basado en >= 75.
+        Usamos un operador nuevo: ... (tres puntos seguidos), copia los datos originales del estudiante
+        al nuevo objeto. (es el promedio).
+    4.- Filtrado filter
+        Usar filter para crear una lista que sólo incluye a los estudiantes con promedio >=75
+    5.- Salida de datos:
+        Se imprimen dos listas:
+            Lista de todos los estudiants con su promedio y estado.
+            Lista con sólo los aprobados.
