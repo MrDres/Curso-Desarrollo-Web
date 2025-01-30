@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Dinámica de Estudiantes</title>
+</head>
+
+<body>
+    <form action="">
+        <h1>Formulario de Estudiantes</h1>
+        <p>Ingrese el nombre de un estudiante en el campo de texto y presione "Agregar" para añadirlo a la lista.</p>
+        <div>
+            <input type="text" id="nuevoAlumno" required placeholder="Nombre del estudiante"><button
+                type="submit" id="btnAddStudent" class="btnAddStudent">Agregar</button>
+        </div>
+        <h2>Lista de Estudiantes</h2>
+        <p>A continuación se muestra la lista de estudiantes agregados. Haga click en "Eliminar" para quitar un
+            estudiante.</p>
+        <section>
+            <ul id="listaEstudiantes" class="listaEstudiantes">
+                <li class="estudiante" data-id="1">Paco
+                    <button id= "btnRemoveStudent" class="btnRemoveStudent" data-action="delete">Eliminar</button>
+                </li>
+                
+            </ul>
+        </section>
+    </form>
+<script>
+    
+    let estudiantes = ["Rubén", "Yoli", "André"];
+    let estudiantes2 =["Ricardo", "Marina"];
+    let listaEstudiantes = estudiantes.concat(estudiantes2);    
+    const addStudentBtn=document.getElementById("btnAddStudent");
+    const btnRemoveStudent=document.getElementById("btnRemoveStudent");
+    let nuevoEstudiante = document.getElementById("nuevoAlumno");
+
+    
+</script>
+</body>
+
+</html>

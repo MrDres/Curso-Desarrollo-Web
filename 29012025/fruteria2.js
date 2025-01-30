@@ -22,9 +22,11 @@
 const frutas = ['manzana', 'banana', 'mango', 'uva', 'cereza','peladillo'];
 const frutasMayusculas = frutas.map(fruta=>fruta.toUpperCase());
 frutasMayusculas.forEach(fruta => console.log(fruta));
+console.log(frutasMayusculas);
 // Apartado 2
 frutas5Letras= frutas.filter(fruta=>fruta.length>5);
 frutas5Letras.forEach(fruta => console.log(fruta));
+console.log(frutas5Letras);
 // Apartado 3
 const letrasTotal = frutas.reduce((acumulado, fruta)=>acumulado+fruta.length,0)
 console.log(letrasTotal);
