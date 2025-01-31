@@ -25,20 +25,57 @@
         </section>
     </form>
     <script>
-
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            const taskList = document.getElementById("tareaLista");
+            const newTaskInput = document.getElementById("nuevaTareaEntrada");
+            const addTaskBtn = document.getElementById("botonNuevaTarea");
+        
         const estudiantes = ["Rubén", "Yoli", "André"];
         const estudiantes2 = ["Ricardo", "Marina"];
-        let listaEstudiantes = estudiantes.concat(estudiantes2);
-        
+        let estudiantesPred = estudiantes.concat(estudiantes2);
+        const btnAddEstudiante = document.getElementById("btnAddEstudiante");
+        //let listaEstudiantes = document.getElementById("listaEstudiantes");
+       // listaEstudiantes.innerHTML=estudiantesPred.forEach("<li>"+estudiantesPred+"</li>");
+        btnAddEstudiante.addEventListener("click", () => {
+            let nuevoEstudiante = document.getElementById("nuevoAlumno").value.trim();
+            if (nuevoEstudiante !== "") {
+                estudiantesPred.push(nuevoEstudiante);
+                console.log(estudiantesPred);
+            } else {
+                console.log("No se ha ingresado un nombre");
+                console.log(estudiantesPred);
+            }
+        });
 
-        function addEstudiante(){
+        /*function addEstudiante(){
             
-            let nuevoEstudiante = document.getElementById("nuevoAlumno").value;            
-            console.log(nuevoEstudiante);
-            listaEstudiantes.push(nuevoEstudiante);
-            console.log(listaEstudiantes);
+            let nuevoEstudiante = document.getElementById("nuevoAlumno").value.trim(); 
+            if (nuevoEstudiante !==""){
+                estudiantesPred.push(nuevoEstudiante);
+                console.log(estudiantesPred);
+            }else{
+                console.log("No se ha ingresado un nombre");
+                console.log(estudiantesPred);
+            }
+    
+            //console.log(nuevoEstudiante);
+            //lista = listaEstudiantes.push(nuevoEstudiante);
+            //console.log(listaEstudiantes);
+            //return listaEstudiantes;
         }
-       
+            addTaskBtn.addEventListener("click", () => {
+            const nuevoEstudiante = newNuevoEstudiante.value.trim();
+            //condicional
+            if (nuevoEstudiante === "") return;
+            const nuevoEstudianteLi = document.createElement("li");
+            nuevoEstudiante.classList.add("estudiante");
+            nuevoEstudianteLi.dataset.id = Date.now();//Usa el tiempo como un ID único
+            newTask.innerHTML = `${taskText} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+            taskList.appendChild(newTask);
+            newTaskInput.value = "";
+        });*/
+    });
     </script>
 </body>
 
