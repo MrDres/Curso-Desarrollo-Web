@@ -18,29 +18,46 @@
             estudiante.</p>
         <section>
             <ul id="listaEstudiantes" class="listaEstudiantes">
-                <li class="estudiante" data-id="1">
-                    <!-- Paco
-                    <button id="btnRmvEstudiante" class="btnRmvEstudiante">Eliminar</button> -->
-                </li>
+                <!-- <li class="estudiante" data-id="1">
+                     Paco
+                    <button id="btnRmvEstudiante" class="btnRmvEstudiante">Eliminar</button> 
+                </li> -->
 
             </ul>
         </section>
     </form>
     <script>
-       // let estudiantes = ["Rubén", "Yoli", "André"];
-        
         // Esto es un comentario
         //Agregar funcionalidad para manejar las tareas
         document.addEventListener("DOMContentLoaded", () => {
-            //let , var , const
-            //const taskList = document.getElementById("tareaLista");
+            
+            const estudiantes = ["Rubén", "Yoli", "André"];
+
+            const estudiantes2 = ["Ricardo", "Marina"];
+
+            let estudiantesPred = estudiantes.concat(estudiantes2);
+
             const studentList = document.getElementById("listaEstudiantes");
-            //const newTaskInput = document.getElementById("nuevaTareaEntrada");
+
             const newStudentInput = document.getElementById("nuevoAlumno");
-            //const addTaskBtn = document.getElementById("botonNuevaTarea");
+
             const addStudentBtn = document.getElementById("btnAddEstudiante");
 
-            //Agregamos una nueva tarea
+            //Cargar estudiantes iniciales
+            loadInitialStudents = () => {
+                estudiantesPred.forEach(estudiante => {
+                    const newTask = document.createElement("li");
+                    newTask.classList.add("estudiante");
+                    newTask.dataset.id = Date.now();
+                    newTask.innerHTML = `${estudiante} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+                    studentList.appendChild(newTask);
+                });
+            }
+
+            loadInitialStudents();
+        
+
+            //Agregamos un nuevo Estudiante
             addStudentBtn.addEventListener("click", () => {
                 const taskText = newStudentInput.value.trim();
                 //condicional
@@ -52,7 +69,7 @@
                 studentList.appendChild(newTask);
                 newStudentInput.value = "";
             });
-            //eliminar tarea
+            //eliminar Estudiante
             studentList.addEventListener("click", (e) => {
                 if (e.target.dataset.action === "delete") {
                     const tarea = e.target.closest(".estudiante");
