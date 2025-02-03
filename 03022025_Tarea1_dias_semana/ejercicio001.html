@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 Dias de la semana</title>
+</head>
+
+<body>
+    <script>
+        const diaSem = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sabado"];
+        
+        let diaUsuario=parseInt(prompt("Introduzca un día de 0 a 6 :"));
+        
+        if(diaUsuario>6 || diaUsuario<0){
+            alert("ERROR solo aceptamos valores entre 0 y 6, un saludo");
+        }else {
+        respuesta(diaUsuario);
+        alert("El día de la semana corresponde con:", diaSem);
+        };
+
+        function respuesta(diaUsuario) {
+            return console.log(diaSem[diaUsuario])
+        }
+    </script>
+
+</body>
+
+</html>
