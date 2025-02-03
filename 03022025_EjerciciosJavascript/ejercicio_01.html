@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 01</title>
+</head>
+
+<body>
+    <p id="ejercicio01"></p>
+    <p id="ejercicio02"></p>
+    <p id="ejercicio03"></p>
+    <p id="ejercicio04"></p>
+    <script>
+
+        function calcularPromedioEdad(usuarios) {
+            const totalEdades = usuarios.reduce((suma, usuarios) => suma + usuarios.edad, 0);
+            return totalEdades / usuarios.length;
+        }
+
+        const usuarios = [{ nombre: 'Juan', edad: 25 }, { nombre: 'Lucia', edad: 35 }, { nombre: 'Pedro', edad: 30 }];
+
+        console.log("promedio de edad: ", calcularPromedioEdad(usuarios));
+        function combinarObjetos(obj1, obj2) {
+            return { ...obj1, ...obj2 };
+        }
+        const obj1 = { a: 1, b: 2 };
+        const obj2 = { b: 8, c: 4 };
+
+        console.log("Objetos combinados: ", combinarObjetos(obj1, obj2));
+
+        document.getElementById('ejercicio01').innerText = `Promedio de edad: ${calcularPromedioEdad(usuarios)}`;
+
+        document.getElementById('ejercicio02').innerText = `Objetos combinado: ${JSON.stringify(combinarObjetos(obj1, obj2))}`;
+
+
+        function filtrarProductos(productos, precioMaximo) {
+            return productos.filter((producto) => producto.precio <= precioMaximo);
+        }
+
+        const productos = [
+            { nombre: 'Camisa', precio: 25 },
+            { nombre: 'Pantalon', precio: 40 },
+            { nombre: 'Zapatos', precio: 35 }];
+
+        const precioMaximo = 35;
+
+        console.log("Productos filtrados: ", filtrarProductos(productos, precioMaximo));
+        document.getElementById('ejercicio03').innerText = `Productos filtrados: ${JSON.stringify(filtrarProductos(productos, precioMaximo))}`;
+    </script>
+</body>
+
+</html>

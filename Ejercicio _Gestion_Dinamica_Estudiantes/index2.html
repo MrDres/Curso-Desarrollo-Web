@@ -27,8 +27,7 @@
         </section>
     </form>
     <script>
-        // Esto es un comentario
-        //Agregar funcionalidad para manejar las tareas
+       
         document.addEventListener("DOMContentLoaded", () => {
             
             const estudiantes = ["Rubén", "Yoli", "André"];
@@ -44,7 +43,7 @@
             const addStudentBtn = document.getElementById("btnAddEstudiante");
 
             //Cargar estudiantes iniciales
-            loadInitialStudents = () => {
+            cargarEstudiantesInicio = () => {
                 estudiantesPred.forEach(estudiante => {
                     const newTask = document.createElement("li");
                     newTask.classList.add("estudiante");
@@ -54,7 +53,7 @@
                 });
             }
 
-            loadInitialStudents();
+            cargarEstudiantesInicio();
         
 
             //Agregamos un nuevo Estudiante
