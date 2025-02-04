@@ -1,0 +1,31 @@
+// CONDICIONALES:
+//Los condicionales permiten ejecutar diferentes bloques de codigo dependiendo de si una condicion es verdadera o falsa
+
+/*SINTAXIS GENÉRICA:
+Si(condicion)
+{bloque a ejecutar si la condicion es verdadera}
+de lo contrario
+{bloque a ejecutar si la condicion es falsa}
+resultado = (condicion) ? (valor si cierto):(valor si falso)*/
+
+/* Los mas comunes:
+1. If: Ejecuta un bloque de codigo si la condicion es verdadera.
+2. else: Ejecuta un bloque de codigo si la condicion del if es falsa.
+3. else if: Permite evaluar multiples condiciones.
+4. switch: Evalua una expresion y ejecuta el bloque de codigo correspondiente al caso que coincida.*/
+
+SWITCH:
+La instruccion switch es una estructura de control que se utiliza para ejecutar diferentes bloques segun el valor de una variable. Es especialmente util cuando tenemos multiples opciones posibles para una misma variable, evitando multiples sentencias if-else.
+
+    Sintaxis:
+
+switch(expresion){
+    case valor1:
+    //codigo se ejecuta si la expresion es igual al valor1
+    break;
+    case valor2:
+    //codigo se ejecuta si la expresion es igual al valor2
+    break;
+    default:
+    //codigo que se ejecuta si la expresion no coincide con ningun valor de los casos anteriores.
+}

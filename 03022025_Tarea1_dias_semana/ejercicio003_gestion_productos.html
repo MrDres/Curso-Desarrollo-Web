@@ -1,0 +1,69 @@
+<!-- Crea un programa en JavaScript que administre una lista de productos en una tienda. El programa debe:Contener un array con objetos de productos. Cada producto debe tener las propiedades:
+nombre (string)
+precio (número)
+stock (número)
+Implementar las siguientes funciones:
+agregarProducto(nombre, precio, stock): Agrega un nuevo producto al array. 
+eliminarProducto(nombre): Elimina un producto por su nombre.
+actualizarStock(nombre, cantidad): Modifica el stock de un producto.
+obtenerProductosDisponibles(): Devuelve un array con los productos que tienen stock disponible (> 0).
+calcularValorInventario(): Devuelve el valor total del inventario (precio * stock de cada producto).
+Datos
+    { nombre: "Laptop", precio: 800, stock: 5 },
+    { nombre: "Mouse", precio: 20, stock: 10 },
+    { nombre: "Teclado", precio: 50, stock: 7 }, -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejercicio 03" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Ejercicio 3 Gestion de productos</title>
+</head>
+
+<body>
+    <div id="agregar" class="agregar">
+        <p><label>Nombre Producto </label><input type="text" required placeholder="Introduzca nombre producto"
+                id="addNombreProducto"></p>
+        <p><label>Precio Producto </label><input type="number" required placeholder="Introduzca precio producto"
+                id="addPrecioProducto"></p>
+        <p><label>Stock Producto </label><input type="text" required placeholder="Introduzca stock producto"
+                id="addStockProducto"></p>
+        <p><button id="btnAddProducto">Añadir Producto</button></p>
+    </div>
+    <div>
+        <ul id="listaProductos" class="listaProductos">
+            
+        </ul>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+    const productosInicio = [
+        { nombre: 'Laptop', precio: 800, stock: 5 },
+        { nombre: 'Mouse', precio: 20, stock: 10 },
+        { nombre: 'Teclado', precio: 50, stock: 7 }];
+    
+    const listaProductos=document.getElementById("listaProductos");
+    
+    cargarProductosInicio(productosInicio);
+
+    function cargarProductosInicio(producto){
+        const newTask=document.createElement("li");
+        newTask.classList.add("producto");
+        newTask.dataset.id = Date.now();
+        newTask.innerHTML = `${producto[1].nombre} ${producto[1].precio} ${producto[1].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+        listaProductos.appendChild(newTask);
+    }
+    
+   
+
+    });
+</script>
+
+</html>

@@ -12,3 +12,23 @@ Datos
     { nombre: "Laptop", precio: 800, stock: 5 },
     { nombre: "Mouse", precio: 20, stock: 10 },
     { nombre: "Teclado", precio: 50, stock: 7 },*/
+
+    const productosInicial=[
+        { nombre: 'Laptop', precio: 800, stock: 5 },
+        { nombre: 'Mouse', precio: 20, stock: 10 },
+        { nombre: 'Teclado', precio: 50, stock: 7 }];
+
+    const 
+
+   cargarProductosInicio = () => {
+        productos.forEach(producto => {
+            const newTask = document.createElement("li");
+            newTask.classList.add("producto");
+            newTask.dataset.id = Date.now();
+            newTask.innerHTML = `${producto} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+            studentList.appendChild(newTask);
+        });
+    }
+    cargarProductosInicio();
+
+//function agregarProducto()
