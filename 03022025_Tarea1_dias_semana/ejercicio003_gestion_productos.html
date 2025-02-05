@@ -31,9 +31,9 @@ Datos
                 id="addNombreProducto"></p>
         <p><label>Precio Producto </label><input type="number" required placeholder="Introduzca precio producto"
                 id="addPrecioProducto"></p>
-        <p><label>Stock Producto </label><input type="text" required placeholder="Introduzca stock producto"
+        <p><label>Stock Producto </label><input type="number" required placeholder="Introduzca stock producto"
                 id="addStockProducto"></p>
-        <p><button id="btnAddProducto">Añadir Producto</button></p>
+        <p><button id="btnAddProducto" onclick="agregarProducto()">Añadir Producto</button></p>
     </div>
     <div>
         <ul id="listaProductos" class="listaProductos">
@@ -50,16 +50,23 @@ Datos
         { nombre: 'Teclado', precio: 50, stock: 7 }];
     
     const listaProductos=document.getElementById("listaProductos");
-    
-    cargarProductosInicio(productosInicio);
-
-    function cargarProductosInicio(producto){
+    const btnAddProducto=document.getElementById("btnAddProducto")
+    //LLamada a funcion para cargar los productos del array iniciales
+    cargarProductos(productosInicio);
+    //funcion para cargar los productos del array en una lista    
+    function cargarProductos(){
+        productosInicio.forEach(producto => {
         const newTask=document.createElement("li");
         newTask.classList.add("producto");
-        newTask.dataset.id = Date.now();
-        newTask.innerHTML = `${producto[1].nombre} ${producto[1].precio} ${producto[1].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+        newTask.dataset.id = Date.now();        
+        newTask.innerHTML = `${producto.nombre} ${producto.precio} ${producto.stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
         listaProductos.appendChild(newTask);
-    }
+    });
+    };
+    //Agregar productos al array y a la lista
+    function agregarProducto(){
+        alert("Botoncete botoncete");
+    };
     
    
 
