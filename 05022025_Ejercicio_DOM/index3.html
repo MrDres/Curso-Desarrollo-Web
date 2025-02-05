@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <style>
+        .tarea { color: black; }
+        .pendiente { color: red; }
+        .completada { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button id="btnAddTarea">Agregar</button>
+    <p id="mensajeError" style="color: red;"></p>
+    <h2>Tareas Pendientes</h2>
+    <ul id="listaPendientes"></ul>
+    <h2>Tareas Completadas</h2>
+    <ul id="listaCompletadas"></ul>
+    <button id="btnFiltrarPendientes">Mostrar Pendientes</button>
+    <button id="btnFiltrarCompletadas">Mostrar Completadas</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tareasPendientes = ["Tarea 1", "Tarea 2"];
+            const tareasCompletadas = ["Tarea 3"];
+            const listaPendientes = document.getElementById("listaPendientes");
+            const listaCompletadas = document.getElementById("listaCompletadas");
+            const btnAddTarea = document.getElementById("btnAddTarea");
+            const nuevaTarea = document.getElementById("nuevaTarea");
+            const mensajeError = document.getElementById("mensajeError");
+
+            const cargarTareas = () => {
+                listaPendientes.innerHTML = '';
+                listaCompletadas.innerHTML = '';
+                tareasPendientes.forEach(tarea => {
+                    const li = document.createElement("li");
+                    li.className = 'tarea pendiente';
+                    li.innerHTML = `${tarea} <button onclick="completarTarea('${tarea}')">Completar</button>`;
+                    listaPendientes.appendChild(li);
+                });
+                tareasCompletadas.forEach(tarea => {
+                    const li = document.createElement("li");
+                    li.className = 'tarea completada';
+                    li.innerHTML = tarea;
+                    listaCompletadas.appendChild(li);
+                });
+            };
+
+            btnAddTarea.addEventListener("click", () => {
+                const tarea = nuevaTarea.value.trim();
+                if (tarea) {
+                    tareasPendientes.push(tarea);
+                    nuevaTarea.value = '';
+                    mensajeError.textContent = '';
+                    cargarTareas();
+                } else {
+                    mensajeError.textContent = 'Por favor agregar tarea';
+                }
+            });
+
+            window.completarTarea = (tarea) => {
+                const index = tareasPendientes.indexOf(tarea);
+                if (index > -1) {
+                    tareasPendientes.splice(index, 1);
+                    tareasCompletadas.push(tarea);
+                    cargarTareas();
+                }
+            };
+
+            document.getElementById("btnFiltrarPendientes").addEventListener("click", () => {
+                listaPendientes.style.display = 'block';
+                listaCompletadas.style.display = 'none';
+            });
+
+            document.getElementById("btnFiltrarCompletadas").addEventListener("click", () => {
+                listaPendientes.style.display = 'none';
+                listaCompletadas.style.display = 'block';
+            });
+
+            cargarTareas();
+        });
+    </script>
+</body>
+</html>

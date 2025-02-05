@@ -1,0 +1,91 @@
+<!-- Crea tareas iniciales, completadas y pendientes
+Agrega las tareas en pendiente, completada
+Las tareas iniciales (CSS) están por defecto en negro, cambia a rojo las pendientes y verde las completadas
+Agrega botones de completar y filtrar tareas (pendiente o completada)
+Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manipulacion del DOM-LISTA DE TAREAS" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Ejercicio DOM - LISTA DE TAREAS</title>
+</head>
+
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+    <button id="btnAgregarTarea">Agregar</button>
+    <p id="mensajeError"></p>
+    <h2>Lista de tareas Pendientes</h2>
+    <ul id="listaPendientes"></ul>
+    <h2>Lista de tareas Completadas</h2>
+    <ul id="listaCompletadas"></ul>
+    <button id="btnFiltrarPendientes">Mostrar Pendientes</button>
+    <button id="btnFiltrarCompletadas">Mostras Completadas</button>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        //Seleccionamos elementos del DOM
+        const pendientes = [];
+        const completadas = [];
+        const tareaInput = document.getElementById('tareaInput');
+        const btnAddTarea = document.getElementById('btnAgregarTarea');
+        const mensajeError = document.getElementById('mensajeError')
+        const listaPendientes = document.getElementById('listaPendientes');
+        const listaCompletadas = document.getElementById('listaCompletadas');
+        const btnFiltrarPendientes = document.getElementById('btnFiltrarPendientes');
+        const btnFiltrarCompletadas = document.getElementById('btnFiltrarCompletadas');
+        //Ponemos el mensaje de error en color rojo
+        mensajeError.style.color = 'red';
+
+        //Funcion  boton añadir tareas
+        btnAddTarea.addEventListener('click', function () {
+            const tarea = tareaInput.value.trim();            
+            if (tarea !== '') {
+                pendientes.push(tarea);
+                console.log(pendientes);
+                tareaInput.value = "";
+                mensajeError.textContent = "";
+                cargarListaPendientes(pendientes);
+            } else {
+                mensajeError.textContent = 'Por favor agregue una tarea';
+            }
+        });
+
+        //Oculta la lista de completados y muestra la de pendientes
+        btnFiltrarPendientes.addEventListener('click',function(){
+            listaPendientes.style.display = 'block';
+            listaCompletadas.style.display = 'none';
+        });
+
+        //Oculta la lista de pendientes y muestra la de Completados
+        btnFiltrarCompletadas.addEventListener('click', function(){
+            listaPendientes.style.display = 'none';
+            listaCompletadas.style.display = 'block';
+        });
+
+        //Funcion para ir llenando la lista de pendientes y crear la tarea junto al boton para convertirla en completada
+        function cargarListaPendientes() {
+            listaPendientes.innerHTML = '';
+            pendientes.forEach(tarea => {
+                const li = document.createElement("li");
+                li.style.color = 'red';
+                li.className = 'tarea pendiente';
+                li.innerHTML = `${tarea} <button onclick="completarTarea('${tarea}')">Completar</button>`;
+                listaPendientes.appendChild(li);
+            });
+        };
+
+        //Funcion para llenar la lista de completados, deberia quitar el elemento de la lista de pendientes y añadirlo a la lista de completados
+        function cargarListaCompletados(){
+
+        };
+
+    });
+</script>
+
+</html>
