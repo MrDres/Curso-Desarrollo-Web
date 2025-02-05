@@ -1,0 +1,68 @@
+<!-- Crea tareas iniciales, completadas y pendientes
+Agrega las tareas en pendiente, completada
+Las tareas iniciales (CSS) están por defecto en negro, cambia a rojo las pendientes y verde las completadas
+Agrega botones de completar y filtrar tareas (pendiente o completada)
+Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulacion del DOM - LISTA DE TAREAS</title>
+</head>
+
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+    <button id="agregarTarea">Agregar Tarea</button>
+    <ul id="listaTareas"></ul>
+    <script>
+        //Seleccionamos elementos del DOM
+        const inputTarea = document.getElementById('tareaInput');//Input de text
+        const botonAgregar = document.getElementById('agregarTarea');//Boton 
+        const listaTareas = document.getElementById('listaTareas'); //Lista de tareas <ul> 
+        let acumuladorId = 0;
+        console.log(acumuladorId);
+        //Agregar un evento al boton para agregar tareas
+
+        botonAgregar.addEventListener('click', function () {
+            //Verificamos si el input no esta vacio
+            if (inputTarea.value.trim() !== "") {
+                //Creamos un elemnto nuevo <li> y dos botones
+                const nuevaTarea = document.createElement('li');
+                const btnCompletar = document.createElement('button');
+                const btnModificar = document.createElement('button');
+                btnCompletar.textContent = "completar";
+                btnModificar.textContent = "modificar";
+                nuevaTarea.id = "li" + acumuladorId;
+                btnCompletar.id = "bc" + acumuladorId;
+                btnModificar.id = "bm" + acumuladorId;
+                console.log(nuevaTarea.id);
+                console.log(btnModificar.id);
+                console.log(btnCompletar.id);
+                acumuladorId = acumuladorId + 1;
+                console.log("el valor del acumulador es " + acumuladorId);
+                //Añadimos el texto del input al nuevo <li>  
+                nuevaTarea.textContent = inputTarea.value;
+                // Añadir el nuevo <li> a la lista <ul>
+                listaTareas.appendChild(nuevaTarea);
+                listaTareas.appendChild(btnCompletar);
+                listaTareas.appendChild(btnModificar);
+                //Limpiamos el input despues de agregar la tarea 
+                inputTarea.value = "";
+            } else {
+                //Si el input esta vacio, le mostramos una advertencia en un alerta
+                alert("Por favor, escribe un tarea.");
+            };
+            
+            btnCompletar.addEventListener('click', () => {
+                btnCompletar=btnCompletar.getElementById("bc"+acumuladorId);
+                let idLi = document.getElementById('li1');
+                idLi.style.color = "red";
+                });
+        });
+    </script>
+</body>
+
+</html>

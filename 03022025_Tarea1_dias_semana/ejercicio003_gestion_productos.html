@@ -1,3 +1,5 @@
+<!-- Realizado por André M. Santamaría Regal -->
+
 <!-- Crea un programa en JavaScript que administre una lista de productos en una tienda. El programa debe:Contener un array con objetos de productos. Cada producto debe tener las propiedades:
 nombre (string)
 precio (número)
@@ -37,38 +39,46 @@ Datos
     </div>
     <div>
         <ul id="listaProductos" class="listaProductos">
-            
+
         </ul>
     </div>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-    const productosInicio = [
-        { nombre: 'Laptop', precio: 800, stock: 5 },
-        { nombre: 'Mouse', precio: 20, stock: 10 },
-        { nombre: 'Teclado', precio: 50, stock: 7 }];
-    
-    const listaProductos=document.getElementById("listaProductos");
-    const btnAddProducto=document.getElementById("btnAddProducto")
-    //LLamada a funcion para cargar los productos del array iniciales
-    cargarProductos(productosInicio);
-    //funcion para cargar los productos del array en una lista    
-    function cargarProductos(){
-        productosInicio.forEach(producto => {
-        const newTask=document.createElement("li");
-        newTask.classList.add("producto");
-        newTask.dataset.id = Date.now();        
-        newTask.innerHTML = `${producto.nombre} ${producto.precio} ${producto.stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
-        listaProductos.appendChild(newTask);
-    });
-    };
-    //Agregar productos al array y a la lista
-    function agregarProducto(){
-        alert("Botoncete botoncete");
-    };
-    
-   
+        const productosInicio = [
+            { nombre: 'Laptop', precio: 800, stock: 5 },
+            { nombre: 'Mouse', precio: 20, stock: 10 },
+            { nombre: 'Teclado', precio: 50, stock: 7 }];
+
+        const listaProductos = document.getElementById("listaProductos");
+        const nombreProducto = document.getElementById("addNombreProducto");
+        const precioProducto = document.getElementById("addPrecioProducto");
+        const stockProducto = document.getElementById("addStockProducto");
+        //Cargamos el array inicial
+        cargarProductos(productosInicio);
+        //Funcion de carga de productos
+        function cargarProductos(producto) {
+            for (i = 0; i < producto.length; i++) {
+                const newTask = document.createElement("li");
+                newTask.classList.add("producto");
+                newTask.dataset.id = Date.now();
+                newTask.innerHTML = `${producto[i].nombre} ${producto[i].precio} ${producto[i].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+                listaProductos.appendChild(newTask);
+            };
+        };
+        //Funcion para agregar productos
+        btnAddProducto.addEventListener("click", () => {
+            const producto=[nombreProducto,precioProducto,stockProducto];
+            console.log(nombreProducto, precioProducto, stockProducto);
+            const newTask = document.createElement("li");
+            newTask.classList.add("producto");
+            newTask.dataset.id = Date.now();
+            newTask.innerHTML = `${producto.nombre} ${producto.precio} ${producto.stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+            listaProductos.appendChild(newTask);
+        });
+
+
 
     });
 </script>
