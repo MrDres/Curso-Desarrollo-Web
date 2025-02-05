@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manipulacion del DOM-LISTA DE TAREAS" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Manipulacion del DOM-LISTA DE TAREAS</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="tareaInput" placeholder="Escribe una tarea">
+    <button id="agregarTarea">Agregar Tarea</button>
+    <ul id="listaTareas"></ul>
+    <script>
+        //Seleccionamos elementos del DOM
+        const inputTarea = document.getElementById('tareaInput');//input de text
+        const botonAgregar = document.getElementById('agregarTarea');//Boton
+        const listaTareas = document.getElementById('listaTareas');//Lista de Tareas
+
+        //Agregar un evento al boton para agregar tareas
+        botonAgregar.addEventListener('click', function(){
+            if(inputTarea.value.trim()!==""){
+                //Creamos un elementos nuevo
+                const nuevaTarea=document.createElement('li');
+                //Añadimos el texto del input al nuevo <li>
+                nuevaTarea.textContent = inputTarea.value;
+                // Añadir al nuevo <li> a la lista <ul>
+                listaTareas.appendChild(nuevaTarea);
+                //limpiamos el input despues de agregar la tarea
+                inputTarea.value="";
+            }else{
+                //Si el input esta vacío, le mostramos una advertencia en un alert por ejemplo
+                alert("Por favor, escribe una tarea");
+            }
+        });
+    </script>
+</body>
+</html>
