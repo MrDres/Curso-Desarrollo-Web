@@ -18,7 +18,7 @@ Datos
         { nombre: 'Mouse', precio: 20, stock: 10 },
         { nombre: 'Teclado', precio: 50, stock: 7 }];
 
-    const 
+    
 
    cargarProductosInicio = () => {
         productos.forEach(producto => {
@@ -32,3 +32,4 @@ Datos
     cargarProductosInicio();
 
 //function agregarProducto()
+    
