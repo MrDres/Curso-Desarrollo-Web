@@ -35,7 +35,8 @@ Datos
                 id="addPrecioProducto"></p>
         <p><label>Stock Producto </label><input type="number" required placeholder="Introduzca stock producto"
                 id="addStockProducto"></p>
-        <p><button id="btnAddProducto" onclick="agregarProducto()">Añadir Producto</button></p>
+        <p><button id="btnAddProducto">Añadir Producto</button>
+        <p id="mensajeError"></p>
     </div>
     <div>
         <ul id="listaProductos" class="listaProductos">
@@ -51,6 +52,7 @@ Datos
             { nombre: 'Mouse', precio: 20, stock: 10 },
             { nombre: 'Teclado', precio: 50, stock: 7 }];
 
+        const mensajeError = document.getElementById("mensajeError");
         const listaProductos = document.getElementById("listaProductos");
         const nombreProducto = document.getElementById("addNombreProducto");
         const precioProducto = document.getElementById("addPrecioProducto");
@@ -63,21 +65,44 @@ Datos
                 const newTask = document.createElement("li");
                 newTask.classList.add("producto");
                 newTask.dataset.id = Date.now();
-                newTask.innerHTML = `${producto[i].nombre} ${producto[i].precio} ${producto[i].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+                newTask.innerHTML = `|NOMBRE: ${producto[i].nombre} | PRECIO: ${producto[i].precio} | STOCK: ${producto[i].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
                 listaProductos.appendChild(newTask);
             };
         };
         //Funcion para agregar productos
         btnAddProducto.addEventListener("click", () => {
-            const producto=[nombreProducto,precioProducto,stockProducto];
-            console.log(nombreProducto, precioProducto, stockProducto);
-            const newTask = document.createElement("li");
-            newTask.classList.add("producto");
-            newTask.dataset.id = Date.now();
-            newTask.innerHTML = `${producto.nombre} ${producto.precio} ${producto.stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
-            listaProductos.appendChild(newTask);
+            let nombre = nombreProducto.value.trim();
+            let precio = precioProducto.value;
+            let stock = stockProducto.value;
+            if (nombre !== "" && precio !== 0 && stock !== 0) {
+
+                //console.log(nombre, precio, stock);
+                productosInicio.push({ nombre, precio, stock });
+                //console.log(productosInicio);
+                const newTask = document.createElement("li");
+                newTask.classList.add("producto");
+                newTask.dataset.id = Date.now();
+                newTask.innerHTML = `|NOMBRE: ${nombre} | PRECIO: ${precio} | STOCK: ${stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
+                listaProductos.appendChild(newTask);
+                
+                //vaciamos los valores de los inputs y nos aseguramos de borrar el texto de error para que no quede despues de un fallo
+                nombreProducto.value = "";
+                precioProducto.value = "";
+                stockProducto.value = "";
+                mensajeError.textContent = '';
+            } else {
+                mensajeError.style.color = 'red';
+                mensajeError.textContent = 'Por favor rellena todos los datos del producto';
+            };
         });
 
+         //eliminar Producto Ojo que no lo estamos borrando del array de productosInicio
+         listaProductos.addEventListener("click", (e) => {
+            if (e.target.dataset.action === "delete") {
+                const tarea = e.target.closest(".producto");
+                tarea.remove();                
+            }
+        });
 
 
     });
