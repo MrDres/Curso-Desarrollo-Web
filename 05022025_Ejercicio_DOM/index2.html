@@ -25,7 +25,8 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
     <h2>Lista de tareas Completadas</h2>
     <ul id="listaCompletadas"></ul>
     <button id="btnFiltrarPendientes">Mostrar Pendientes</button>
-    <button id="btnFiltrarCompletadas">Mostras Completadas</button>
+    <button id="btnFiltrarCompletadas">Mostrar Completadas</button>
+    <button id="btnMostrarTodo">Mostrar Todo</button>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -39,6 +40,7 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
         const btnAddTarea = document.getElementById('btnAgregarTarea');
         const btnFiltrarPendientes = document.getElementById('btnFiltrarPendientes');
         const btnFiltrarCompletadas = document.getElementById('btnFiltrarCompletadas');
+        const btnMostrarTodo = document.getElementById('btnMostrarTodo');
         //Ponemos el mensaje de error en color rojo
         mensajeError.style.color = 'red';
 
@@ -67,6 +69,11 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
             listaPendientes.style.display = 'none';
             listaCompletadas.style.display = 'block';
         });
+        //Muestra todas las listas
+        btnMostrarTodo.addEventListener('click', function(){
+            listaPendientes.style.display = 'block';
+            listaCompletadas.style.display = 'block';
+        });
 
         //Funcion para ir llenando la lista de pendientes y crear la tarea junto al boton para convertirla en completada
         function cargarListaPendientes() {
@@ -75,15 +82,15 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
                 const li = document.createElement("li");
                 li.style.color = 'red';
                 li.className = 'tarea pendiente';
-                li.innerHTML = `${tarea} <button onclick="cargarListaCompletados('${tarea}')">Completar</button>`;
+                li.innerHTML = `${tarea} <button onclick="cargarListaCompletados()">Completar</button>`;
                 listaPendientes.appendChild(li);
             });
         };
 
         //Funcion para llenar la lista de completados, deberia quitar el elemento de la lista de pendientes y añadirlo a la lista de completados pero sigo sin saber como darle funcionalidad a los botones creados
-        //function cargarListaCompletados(){
-
-        //};
+        function cargarListaCompletados(){
+            console.log("funciona por favor");
+        };
 
     });
 </script>

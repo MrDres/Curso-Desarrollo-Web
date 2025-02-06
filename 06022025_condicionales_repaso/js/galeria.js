@@ -21,7 +21,7 @@ function crearGaleria(){
         const img = document.createElement("img");
         img.src = images[i];
         img.alt = `Imagen ${i + 1}`;
-        img.addEventListener('click',()=> openModal(i));
+        img.addEventListener('click', () => openModal(i));
         galeria.appendChild(img);
     }
 
@@ -35,5 +35,27 @@ function openModal(index){
 
 function closeModal(){
     modal.style.display = "none";
-}
+};
+
+function prevImg(){
+    if (currentIndex > 0){
+        currentIndex--;
+    }else {
+        currentIndex = images.length - 1; // Volver al final i es la primera imagen
+    }
+    modalImage.src = images[currentIndex];
+};
+
+function nextImg(){
+    if(currentIndex < images.length - 1){
+        currentIndex++;
+    }else {
+        currentIndex = 0;
+    }
+    modalImage.src = images[currentIndex];
+};
+//Eventos de los botones close, prev, next (EventListener)
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', prevImg);
+    nextBtn.addEventListener('click', nextImg);
 };
