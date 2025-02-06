@@ -32,11 +32,11 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
         //Seleccionamos elementos del DOM
         const pendientes = [];
         const completadas = [];
-        const tareaInput = document.getElementById('tareaInput');
-        const btnAddTarea = document.getElementById('btnAgregarTarea');
+        const tareaInput = document.getElementById('tareaInput');        
         const mensajeError = document.getElementById('mensajeError')
         const listaPendientes = document.getElementById('listaPendientes');
         const listaCompletadas = document.getElementById('listaCompletadas');
+        const btnAddTarea = document.getElementById('btnAgregarTarea');
         const btnFiltrarPendientes = document.getElementById('btnFiltrarPendientes');
         const btnFiltrarCompletadas = document.getElementById('btnFiltrarCompletadas');
         //Ponemos el mensaje de error en color rojo
@@ -75,15 +75,15 @@ Modifica el alert por un texto bajo el input (Por favor agregar tarea) -->
                 const li = document.createElement("li");
                 li.style.color = 'red';
                 li.className = 'tarea pendiente';
-                li.innerHTML = `${tarea} <button onclick="completarTarea('${tarea}')">Completar</button>`;
+                li.innerHTML = `${tarea} <button onclick="cargarListaCompletados('${tarea}')">Completar</button>`;
                 listaPendientes.appendChild(li);
             });
         };
 
         //Funcion para llenar la lista de completados, deberia quitar el elemento de la lista de pendientes y añadirlo a la lista de completados pero sigo sin saber como darle funcionalidad a los botones creados
-        function cargarListaCompletados(){
+        //function cargarListaCompletados(){
 
-        };
+        //};
 
     });
 </script>
