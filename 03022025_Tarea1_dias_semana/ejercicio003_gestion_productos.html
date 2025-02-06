@@ -65,8 +65,8 @@ Datos
                 const newTask = document.createElement("li");
                 newTask.classList.add("producto");
                 newTask.dataset.id = Date.now();
-                newTask.innerHTML = `|NOMBRE: ${producto[i].nombre} | PRECIO: ${producto[i].precio} | STOCK: ${producto[i].stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
-                listaProductos.appendChild(newTask);
+                newTask.innerHTML = `|NOMBRE: ${producto[i].nombre} | PRECIO: ${producto[i].precio} | STOCK: ${producto[i].stock} <button class="deleteBtn" data-action="delete">Eliminar</button> <button class="modifyBtn" id="${i}">Modificar</button>`;
+                listaProductos.appendChild(newTask);                
             };
         };
         //Funcion para agregar productos
@@ -75,16 +75,14 @@ Datos
             let precio = precioProducto.value;
             let stock = stockProducto.value;
             if (nombre !== "" && precio !== 0 && stock !== 0) {
-
                 //console.log(nombre, precio, stock);
                 productosInicio.push({ nombre, precio, stock });
-                //console.log(productosInicio);
+                console.log(productosInicio);
                 const newTask = document.createElement("li");
                 newTask.classList.add("producto");
                 newTask.dataset.id = Date.now();
                 newTask.innerHTML = `|NOMBRE: ${nombre} | PRECIO: ${precio} | STOCK: ${stock} <button class="deleteBtn" data-action="delete">Eliminar</button>`;
-                listaProductos.appendChild(newTask);
-                
+                listaProductos.appendChild(newTask);                
                 //vaciamos los valores de los inputs y nos aseguramos de borrar el texto de error para que no quede despues de un fallo
                 nombreProducto.value = "";
                 precioProducto.value = "";
