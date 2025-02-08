@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lista Tareas Mejorada" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Lista Tareas Mejorada</title>
+</head>
+
+<body>
+    <h1>Lista de Tareas Mejorada</h1>
+    <input type="text" id="entradaTarea" placeholder="Nueva Tarea" required>
+    <input type="date" id="entradaFecha" required>
+    <input type="text" id="entradaTiempo" placeholder="Tiempo estimado (ej: 2 horas)" required>
+    <button id="botonAgregar" onclick="agregarTarea()">Agregar</button>
+    <div id="botonesFiltro">
+        <button onclick="filtrarTareas('all')">Mostrar Todas</button>
+        <button onclick="filtrarTareas('completed')">Mostrar Completadas</button>
+        <button onclick="filtrarTareas('pending')">Mostrar Pendientes</button>
+    </div>
+
+    <ul id="listaTareas"></ul>
+</body>
+<script src="app_fecha.js"></script>
+
+</html>

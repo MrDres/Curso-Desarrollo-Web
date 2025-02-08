@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tarea par impar" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Lista de números</title>
+</head>
+
+<body>
+    <!-- Crear una lista dinamica con numeros pares.
+     Crea una lista DOM que muestre los numeros pares del 1 al 20 -->
+
+    <h1>Números Pares del 1 al 20</h1>
+    <!-- Dentro va el contenedor de la lista -->
+    <ul id="lista"></ul>
+
+    <div class="start" data-value="1">&#9733;</div>
+    <div class="start" data-value="2">&#9733;</div>
+    <div class="start" data-value="3">&#9733;</div>
+    <div class="start" data-value="4">&#11088;</div>
+    <div class="start" data-value="5">&#11088;</div>
+    <script>
+        //Paso 1 : Acceder al elemento DOM
+        const lista = document.getElementById("lista");
+        //Paso 2 : Usar un bucle for para iterar del 1 al 20
+        for (let i = 1; i <= 20; i++) {
+            //Paso 3 : Verificamos si el numero es par
+            if (i % 2 === 0) {
+                //Paso 4 : crea el elemento nuevo li
+                const item = document.createElement("li");
+                //Paso 5: Asignar el número al contenido del li
+                item.textContent = i;
+                //Paso 6: Agregar el li a la lista ul
+                lista.appendChild(item);
+            }
+        }
+    </script>
+    <script>
+        //For Each Iterar (recorrer) sobre los elementos de un array o una lista de nodos
+        //Sintaxis Basica
+    
+       // array.forEach(function(elemento,indice,arrayCompleto){
+            //codigo a Ejecutar
+       // });
+    </script>
+    <script>
+        const numeros=[1,2,3,4,5,6,7,8,9,10];
+        
+        numeros.forEach(function(numero){
+            console.log(numero);
+        });
+    
+        const start = document.querySelectorAll('.start');
+        start.forEach(start=>{
+            start.addEventListener('click', function(){
+                const value = this.getAttribute('data-value');
+                console.log(`Valoracion:$´{value} estrellas`);
+            });
+        });
+    </script> 
+</body>
+
+</html>
