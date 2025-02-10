@@ -1,0 +1,184 @@
+<!-- Realizado por André M. Santamaría Regal -->
+
+<!-- Crea un programa en JavaScript que administre una lista de productos en una tienda. El programa debe:Contener un array con objetos de productos. Cada producto debe tener las propiedades:
+nombre (string)
+precio (número)
+stock (número)
+Implementar las siguientes funciones:
+agregarProducto(nombre, precio, stock): Agrega un nuevo producto al array. 
+eliminarProducto(nombre): Elimina un producto por su nombre.
+actualizarStock(nombre, cantidad): Modifica el stock de un producto.
+obtenerProductosDisponibles(): Devuelve un array con los productos que tienen stock disponible (> 0).
+calcularValorInventario(): Devuelve el valor total del inventario (precio * stock de cada producto).
+Datos
+    { nombre: "Laptop", precio: 800, stock: 5 },
+    { nombre: "Mouse", precio: 20, stock: 10 },
+    { nombre: "Teclado", precio: 50, stock: 7 }, -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejercicio 03" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Ejercicio 3 Gestion de productos</title>
+</head>
+
+<body>
+    <div id="agregar" class="agregar">
+        <p><label>Nombre Producto </label><input type="text" required placeholder="Introduzca nombre producto"
+                id="addNombreProducto"></p>
+        <p><label>Precio Producto </label><input type="number" required placeholder="Introduzca precio producto"
+                id="addPrecioProducto"></p>
+        <p><label>Stock Producto </label><input type="number" required placeholder="Introduzca stock producto"
+                id="addStockProducto"></p>
+        <p><button id="btnAddProducto">Añadir Producto</button> <button id="btnValor">Calcular Valor Total</button></p>
+        <p id="mensajeError"></p>
+    </div>
+    <div>
+        <ul id="listaProductos" class="listaProductos">
+        </ul>
+    </div>
+    <button id="btnDisponibles">Mostrar productos disponibles</button>
+    <div id="divSponibles">
+        <h3>LISTADO DE OBJETOS DISPONIBLES</h1>
+            <ul id="listaDisponibles" class="listaDisponibles">
+            </ul>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        //Array con los productos por defecto
+        const productosInicio = [
+            { nombre: 'Laptop', precio: 800, stock: 5 },
+            { nombre: 'Mouse', precio: 20, stock: 10 },
+            { nombre: 'Teclado', precio: 50, stock: 7 }];
+
+        // Creamos varibles para utilizar mas adelante
+        const mensajeError = document.getElementById('mensajeError');
+        const nombreProducto = document.getElementById('addNombreProducto');
+        const precioProducto = document.getElementById('addPrecioProducto');
+        const stockProducto = document.getElementById('addStockProducto');
+        const listaProductos = document.getElementById('listaProductos');
+        const btnAgregar = document.getElementById('btnAddProducto');
+        const btnDisponibles = document.getElementById('btnDisponibles');
+        const divSponibles = document.getElementById('divSponibles');
+        const listaDisponibles = document.getElementById('listaDisponibles');
+        const btnValor = document.getElementById('btnValor')
+
+        //usamos la funcion para cargar los productos iniciales
+        cargarProductos(productosInicio);
+        //ocultamos el div de la lista de disponibles
+        divSponibles.style.display = "none";
+
+        //Funcion para cargar los productos del array
+        function cargarProductos(producto) {
+            while (listaProductos.firstChild) {
+                listaProductos.removeChild(listaProductos.firstChild);
+            };
+            for (let i = 0; i < producto.length; i++) {
+                const newTask = document.createElement('li');
+                const spanNombre = document.createElement('span');
+                const btnEliminar = document.createElement('button');
+                const btnModificar = document.createElement('button');
+                //boton eliminar
+                btnEliminar.className = 'botonEliminar';
+                btnEliminar.textContent = 'Eliminar';
+                //funcion para eliminar productos de la lista y del array
+                btnEliminar.onclick = function () {
+                    listaProductos.removeChild(newTask);
+                    productosInicio.splice(newTask, 1);
+                    console.log(productosInicio);
+                };
+                //Boton Modificar
+                btnModificar.className = 'botonModificar';
+                btnModificar.textContent = 'Modificar Stock';
+                //funcion para modificar el stock
+                btnModificar.onclick = function () {
+                    const nuevoStock = parseInt(prompt('Introducir la nueva cantidad de stock'));
+                    if (nuevoStock !== null && nuevoStock !== "") {
+                        productosInicio[i].stock = nuevoStock;
+                        console.log(productosInicio);
+                        cargarProductos(productosInicio);
+                    }
+                }
+                spanNombre.textContent = `  |  nombre: ${producto[i].nombre}  |  precio: ${producto[i].precio}  |  stock: ${producto[i].stock}  |  `
+
+                listaProductos.appendChild(newTask);
+                newTask.append(spanNombre);
+                newTask.append(btnEliminar);
+                newTask.append(btnModificar);
+            }
+        };
+
+        //funcion escribir mensaje de error
+        function mostrarError(mensaje) {
+            mensajeError.style.color = "red";
+            mensajeError.textContent = mensaje;
+            setTimeout(() => mensajeError.textContent = (""), 3000);
+        };
+        //funcion agregar productos al array
+
+        function agregarProducto() {
+            const nombre = nombreProducto.value.trim();
+            const precio = parseInt(precioProducto.value);
+            const stock = parseInt(stockProducto.value);
+            //Validacion de datos y mensaje de error si no estan todos
+            if (!nombre || !precio || !stock) {
+                mostrarError('Todos los campos tienen que tener valor.');
+                return;
+            } else {
+                productosInicio.push({ nombre, precio, stock });
+                //console.log(productosInicio);
+
+                cargarProductos(productosInicio);
+                nombreProducto.value = "";
+                precioProducto.value = "";
+                stockProducto.value = "";
+            };
+        };
+
+        //Funcion mostrar disponibles
+        function mostrarDisponibles() {                      
+            divSponibles.style.display = "block";
+            while (listaDisponibles.firstChild) {
+                listaDisponibles.removeChild(listaDisponibles.firstChild);
+            };          
+            for (let i = 0; i < productosInicio.length; i++){
+                if(productosInicio[i].stock > 0){
+                    const nuevaTarea = document.createElement('li');
+                    const disponibleNombre = document.createElement('span');
+                    disponibleNombre.textContent = `  |  nombre: ${productosInicio[i].nombre}  |  precio: ${productosInicio[i].precio}  |  stock: ${productosInicio[i].stock}  |`;
+                    listaDisponibles.appendChild(nuevaTarea);
+                    nuevaTarea.append(disponibleNombre);
+                };
+            };
+        };
+
+        function calcularValor(){
+            let total=0;
+            for (let i = 0; i < productosInicio.length; i++){
+                const valor = productosInicio[i].stock * productosInicio[i].precio;                
+                total = total + valor;
+                
+            };
+            
+            alert('El valor total de todas las mercancias es de : '+total);
+        };
+
+        //Añadimos listener al btnAgregar
+        btnAgregar.addEventListener("click", agregarProducto);
+        //Añadimos listener al btnDisponibles  
+        btnDisponibles.addEventListener("click", mostrarDisponibles);
+        //Añadimos listener al btnValor me pasa lo mismo que en el listener del btnDisponibles
+        btnValor.addEventListener("click",calcularValor);
+
+
+
+    });
+</script>
+
+</html>
