@@ -8,19 +8,23 @@
     <meta name="author" content="André M. Santamaría Regal" />
     <meta name="copyright" content="Copyright" />
     <title>Lista Tareas Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>Lista de Tareas Mejorada</h1>
-    <input type="text" id="entradaTarea" placeholder="Nueva Tarea" required>
-    <input type="date" id="entradaFecha" required>
-    <input type="text" id="entradaTiempo" placeholder="Tiempo estimado (ej: 2 horas)" required>
-    <button id="botonAgregar" onclick="agregarTarea()">Agregar</button>
+    <h3>Estimado usuario es obligatorio rellenar todos los campos para agregar una tarea</h3>
+    <input type="text" id="entradaTarea" placeholder="Nueva Tarea" required title="Agregar nombre de la tarea">
+    <input type="date" id="entradaFecha" required title="Agregar fecha deseada yyyy-mm-dd">
+    <input type="text" id="entradaTiempo" placeholder="Tiempo estimado (ej: 2 horas)" required title="Agregar tiempo estimado para realizar la tarea">
+    <button id="botonAgregar" title="Pulsar para agregar los datos de la tarea">Agregar</button>
     <div id="botonesFiltro">
-        <button onclick="filtrarTareas('all')">Mostrar Todas</button>
-        <button onclick="filtrarTareas('completed')">Mostrar Completadas</button>
-        <button onclick="filtrarTareas('pending')">Mostrar Pendientes</button>
+        <button onclick="filtrarTareas('all')" title="Pulsar para mostrar todas las tareas">Mostrar Todas</button>
+        <span></span>
+        <button onclick="filtrarTareas('completed')" title="Pulsar para mostrar la lista de tareas completadas">Mostrar Completadas</button>
+        <button onclick="filtrarTareas('pending')" class="btnPendientes" title="Pulsar para mostrar la lista de tareas pendientes">Mostrar Pendientes</button>
     </div>
+    <p popover id="textoExplicativo">Aqui va la explicación</p>
 
     <ul id="listaTareas"></ul>
 </body>
