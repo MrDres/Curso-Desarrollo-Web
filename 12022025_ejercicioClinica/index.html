@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Laboratorio de Análisis" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <title>Laboratorio de Análisis</title>
+    <style>
+        /* Estilos básicos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            display: block;
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        section textarea{
+            max-width: 100%; /* Le pongo un limite al ancho máximo del textArea*/
+            resize: none; /* No permito que el textarea se pueda redimensionar por el usuario*/
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: bottom; /*He cambiado la position de fixed a bottom para que se mantenga en el fondo de la web*/
+            bottom: 0;
+            max-width: 100%;
+            font-size: 1rem; /* añadido font size al footer para que el texto se mantenga al tamaño por defecto del usuario*/
+        }
+
+       @media (max-width: 768px) {
+            footer{
+                max-width: 100%;
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+           footer{
+            max-width: 100%;
+            font-size: 1rem;
+           }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado de la página -->
+    <header>
+        <h1>Laboratorio de Análisis Clínico</h1>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio">
+        <h2>Bienvenido al Laboratorio de Análisis Clínico</h2>
+        <p>Somos un laboratorio especializado en análisis clínicos, comprometidos con la salud y el bienestar de nuestros pacientes. Ofrecemos servicios de alta calidad con tecnología de vanguardia.</p>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <ul>
+            <li>Análisis de Sangre</li>
+            <li>Pruebas de Alergias</li>
+            <li>Estudios Microbiológicos</li>
+            <li>Pruebas de Embarazo</li>
+            <li>Análisis de Orina</li>
+        </ul>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" ><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ><br><br>
+
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" ></textarea><br><br>
+            <button type="submit">Enviar</button><button type="reset">Borrar</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <script type="text/javascript">
+            copyright = new Date();
+            update = copyright.getFullYear();
+            document.write("© 2018 - " + update + " " + "Laboratorio de Análisis Clínico. Todos los derechos reservados.");
+        </script>        
+    </footer>
+
+    <!-- JavaScript para manejar el formulario de contacto -->
+    <script>
+        // Seleccionamos el formulario por su ID
+        const form = document.getElementById('contactForm');
+
+        // Añadimos un evento de escucha para cuando se envíe el formulario
+        form.addEventListener('submit', function(event) {
+            // Prevenimos el comportamiento por defecto del formulario (que es recargar la página)
+            event.preventDefault();
+
+            // Obtenemos los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validamos que los campos no estén vacíos
+            if (nombre && email && mensaje) {
+                // Mostramos un mensaje de éxito en la consola
+                console.log('Formulario enviado con éxito:');
+                console.log('Nombre:', nombre);
+                console.log('Email:', email);
+                console.log('Mensaje:', mensaje);
+
+                // Limpiamos el formulario después de enviarlo
+                form.reset();
+
+                // Mostramos un mensaje de éxito al usuario
+                alert('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+            } else {
+                // Mostramos un mensaje de error si algún campo está vacío
+                alert('Por favor, completa todos los campos del formulario.');// He borrado del html el atributo required de los inputs para que lance esta alert y no la propia del elemento al tener el atributo required
+            }
+        });
+    </script>
+
+</body>
+</html>
