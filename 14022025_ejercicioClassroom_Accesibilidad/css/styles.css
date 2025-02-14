@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+.high-contrast {
+    background: black;
+    color: yellow;
+}
+
+.high-contrast input, .high-contrast textarea {
+    background: black;
+    color: white;
+    border: 1px solid yellow;
+}
