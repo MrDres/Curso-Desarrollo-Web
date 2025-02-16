@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;    
+}
+
 :root{
     --primary-color:#003366;
     --secondary-color:#2E8B57;
     --terciary-color:#F4A460;
 }
 
+body {
+    background-image: url("");
+    background-size: cover;
+    font-family: "Fredoka";
+}
+
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    flex-direction: column;
+    height: 100vh;
 }
