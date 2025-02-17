@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Accesible</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Aplicación Accesible</h1>
+        <button id="open-settings" aria-haspopup="true" aria-controls="accessibility-panel">
+            ⚙️ Ajustes de Accesibilidad
+        </button>
+        
+    </header>
+
+    <main>
+        <section aria-labelledby="content-title">
+            <h2 id="content-title">Bienvenido</h2>
+            <p>Esta es una aplicación con ajustes de accesibilidad avanzados.</p>
+        </section>
+    </main>
+
+    <!-- Panel de accesibilidad -->
+    <div id="accessibility-panel" role="dialog" aria-labelledby="panel-title" hidden>
+        <h2 id="panel-title">Opciones de Accesibilidad</h2>
+        <button id="toggle-contrast">Modo Alto Contraste</button>
+        <button id="increase-font">Aumentar Fuente</button>
+        <button id="decrease-font">Disminuir Fuente</button>
+        <button id="close-settings">❌ Cerrar</button>
+    </div>
+</body>
+</html>

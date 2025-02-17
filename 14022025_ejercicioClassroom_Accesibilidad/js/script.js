@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   //funcion de reduccion de tamaño del texto
   decreaseFontButton.onclick = function decreaseFont() {
+    //fontsize = Math.min(12, fontsize -2)
     if (fontsize > minfontsize) {
       fontsize = fontsize - 2;
       body.style.fontSize = fontsize + "px";
