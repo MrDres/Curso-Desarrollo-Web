@@ -1,0 +1,37 @@
+header {
+    width: 100%;
+    /* padding: 2rem; */
+    margin-top: 10%;
+    margin-left: 80%;
+    position: right;
+    right: 0;
+  }
+  body {
+    background-color: rgb(199, 191, 191);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex; /*Se agrande o no*/
+    height: 100%;
+  }
+  .mainContainer {
+    width: 90%;
+    position: absolute;
+  }
+  .seccionGrid {
+    display: grid;
+    /* width: 75%; */
+  }
+  .informacionGrid {
+    /* se verán al lado */
+    display: grid;
+    /* width: 75%; */
+    grid-template-columns: 1fr 1fr;
+
+    /* background: blueviolet; */
+    gap: 2rem;
+  }
+  footer {
+    width: 80%;
+    padding: 2rem;
+    margin-top: 10%;
+    position: bottom;
+  }

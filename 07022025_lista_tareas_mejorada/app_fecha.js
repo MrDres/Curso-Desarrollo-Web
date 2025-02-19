@@ -50,12 +50,12 @@ function agregarTarea() {
     botonCompletar.title = 'Pulsar para marcar la tarea como completada';
     botonCompletar.onclick = function () {
         spanTarea.classList.toggle('completada');
-        if(spanTarea.className === 'completada'){
+        if (spanTarea.className === 'completada') {
             elementoTarea.style.backgroundColor = "greenYellow";
-            
-        } else{ 
-        elementoTarea.style.backgroundColor = "yellow";
-    };
+
+        } else {
+            elementoTarea.style.backgroundColor = "yellow";
+        };
         guardarTareas();
     }
     //Crea boton para editar tarea
@@ -145,7 +145,7 @@ function guardarTareas() {
 // Función para cargar las tareas desde localStorage
 function cargarTareas() {
     const tareas = JSON.parse(localStorage.getItem('tareas')) || [];
-    tareas.forEach(tarea => {       
+    tareas.forEach(tarea => {
 
         const elementoTarea = document.createElement('li');
         elementoTarea.className = 'elementoTarea';
@@ -164,23 +164,23 @@ function cargarTareas() {
         spanTiempo.className = 'tiempoEstimado';
         spanTiempo.textContent = tarea.tiempoEstimado ? `Tiempo estimado: ${tarea.tiempoEstimado}` : '';
 
-        if(spanTarea.className === 'completada'){
+        if (spanTarea.className === 'completada') {
             elementoTarea.style.backgroundColor = "greenYellow";
-        } else{ 
-        elementoTarea.style.backgroundColor = "yellow";
+        } else {
+            elementoTarea.style.backgroundColor = "yellow";
         };
 
         const botonCompletar = document.createElement('button');
         botonCompletar.className = 'botonCompletar';
         botonCompletar.textContent = 'Completar';
         botonCompletar.onclick = function () {
-            spanTarea.classList.toggle('completada'); 
-            if(spanTarea.className === 'completada'){
+            spanTarea.classList.toggle('completada');
+            if (spanTarea.className === 'completada') {
                 elementoTarea.style.backgroundColor = "greenYellow";
-               
-            } else{ 
-            elementoTarea.style.backgroundColor = "yellow";
-            };          
+
+            } else {
+                elementoTarea.style.backgroundColor = "yellow";
+            };
         };
 
         const botonEditar = document.createElement('button');
