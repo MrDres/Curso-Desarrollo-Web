@@ -12,22 +12,64 @@
 </head>
 
 <body>
-    <div id="contenedorIzq" class="contenedorIzq">
-
-    </div>
-    <div id="contenedorDer" class="contenedorDer">
-        <div id="contenedorCategorias" class="contenedorCategorias">
-            <!-- para el scroll acuerdate de en el css poner overflow: auto -->
+    <div id="contenedorMain" class="contenedorMain">
+        <div id="contenedorIzq" class="contenedorIzq">
+            <div id="contenedorCliente" class="contenedorCliente">
+                <!-- Formulario de datos de cliente, decidí que el alias no sea obligatorio ya que puede ser una perdida de tiempo rellenarlo en momento de mucha carga de trabajo, en versiones con base de datos se podria hacer un deplegable de los alias que rellene los datos del form -->
+                <form id="formClient" class="formClient">
+                    <button id="enviarFormClient" class="enviarFormClient btnImg"><img
+                            src="assets/icons/asignarCliente.svg"><br>Asignar cliente</button>
+                    <div>
+                        <label for="alias" id="aliasLbl" class="aliasLbl formLbl">ALIAS</label><input type="text"
+                            id="aliasInput" class="aliasInput" placeholder="Introduce un alias">
+                        <label for="cliente" id="clienteLbl" class="clienteLbl formLbl">CLIENTE</label><input
+                            type="text" id="clienteInput" class="clienteInput" placeholder="Introduce nombre cliente"
+                            required>
+                        <label for="numMesa" id="numMesaLbl" class="numMesaLbl formLbl">Nº MESA</label><input
+                            type="text" id="numMesaInput" class="numMesaInput" placeholder="Introducir Nº Mesa"
+                            required>
+                        <label for="comensales" id="comensalesLbl"
+                            class="comensalesLbl formLbl">COMENSALES</label><input type="text" id="comensalesInput"
+                            class="comensalesInput" placeholder="Introducir Nº Comensales" required>
+                        <label for="grCocina" id="grCocinaLbl" class="grCocinaLbl formLbl">GR. COCINA</label><input
+                            type="text" id="grCocinaInput" class="grCocinaInput" placeholder="Introducir Gr Cocina"
+                            required>
+                    </div>
+                </form>
+            </div>
+            <!-- Utilizamos una pantalla que muestre los productos añadidos al pedido (carrito) -->
+            <div id="contenedorCarrito" class="contenedorCarrito">
+                <table>
+                    <tr>
+                        <th>Articulo</th>
+                        <th>Uds.</th>
+                        <th>Imp</th>
+                        <th>Dto %</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div id="contenedorProductos" class="contenedorProductos">
-            
+        <div id="contenedorDer" class="contenedorDer">
+            <div id="contenedorCategorias" class="contenedorCategorias">
+                <!-- para el scroll acuerdate de en el css poner overflow: auto -->
+            </div>
+            <div id="contenedorProductos" class="contenedorProductos">
+
+            </div>
         </div>
     </div>
-
 
     <footer>
         <!-- Es una sucesion de etiquetas label en las que el contenido de texto es fijo les pongo apellido Lbl en el id y la class y las que van a ser datos de variables les pongo apellido Dato -->
-        <table>
+        <table id="footerTable" class="footerTable">
             <tr>
                 <td><label id="cajaLbl" class="cajaLbl">CAJA ACTUAL</label></td>
                 <td><label id="fechaHoraLbl" class="fechaHoraLbl">Aquí va la hora</label></td>

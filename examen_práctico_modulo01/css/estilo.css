@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+/* DIVISION GRID PRINCIPAL */
+.contenedorBody {
+    display: grid;
+    grid-template-areas:
+        "colMain colHeader"
+        "colFooter colHeader";
+    grid-template-columns: 5fr 0.5fr;
+    gap: 5px;
+    background-color: rgb(146, 146, 146);
+}
+
+.contenedorBody>div.colMain {
+    grid-area: colMain;
+    background-color: rgb(255, 255, 255);
+}
+
+.contenedorBody>div.colHeader {
+    grid-area: colHeader;
+    background-color: rgb(168, 110, 110);
+}
+
+.contenedorBody>div.colFooter {
+    grid-area: colFooter;
+    background-color: rgb(83, 83, 83);
+}
+
+/* DIVISION GRID MAIN */
+.colMain {
+    display: grid;
+    grid-template-areas:
+        "colCalculadora colMedio colProductos";
+    grid-template-columns: 1fr 0.2fr 1fr;
+    gap: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.colMain>div.colCalculadora {
+    grid-area: colCalculadora;
+    background-color: rgb(119, 157, 189);
+}
+
+.colMain>div.colMedio {
+    grid-area: colMedio;
+    background-color: rgb(124, 168, 207);
+}
+
+.colMain>div.colProductos {
+    grid-area: colProductos;
+    background-color: rgb(124, 168, 207);
+}
+
+/* DIVISION COLUMNA CALCULADORA */
+.colCalculadora {
+    display: grid;
+    grid-template-areas:
+        "filaTicket"
+        "filaCalculadora"
+    ;
+    gap: 5px;
+}
+
+.colCalculadora>div.filaTicket {
+    grid-area: filaTicket;
+    background-color: rgb(180, 180, 180);
+}
+
+.colCalculadora>div.filaCalculadora {
+    grid-area: filaCalculadora;
+    background-color: rgb(172, 190, 232);
+}
+
+/* DIVISION COLUMNA PRODUCTOS */
+.colProductos {
+    display: grid;
+    grid-template-areas:
+        "filaCategorias"
+        "filaProductos"
+    ;
+    gap: 5px;
+}
+
+.colProductos>div.filaCategorias {
+    grid-area: filaCategorias;
+    background-color: rgb(180, 180, 180);
+}
+
+.colProductos>div.filaProductos {
+    grid-area: filaProductos;
+    background-color: rgb(172, 190, 232);
+}
+
+td {
+    color: white;
+    background-color: #2bba68;
+    padding: 8px;
+}
+
+td:nth-child(even) {
+    background-color: #5b846c
+}
+
+.configBtn {
+    
+}
