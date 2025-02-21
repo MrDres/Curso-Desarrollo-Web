@@ -166,7 +166,7 @@ td {
   overflow-y: auto; 
 }
 
-.itemCategorias{
+.itemCategorias, .itemProductos{
   width:fit-content;
   height: fit-content;  
   text-align: center;
@@ -174,13 +174,13 @@ td {
   border-radius: 8px;
 }
 
-.imagenCategorias{  
+.imagenCategorias, .imagenProductos{  
   width: 80px;
   height: 80px;  
   object-fit: cover; /*Asegura que la imagen se ajuste al contenedor*/
 }
 
-.imagenTexto{
+.textoCategorias, .textoProductos{
   padding: 4px;  
   font-size: 14px;
   background-color: var(--textImagenes);

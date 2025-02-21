@@ -24,18 +24,18 @@
                     <button id="enviarFormClient" class="enviarFormClient btnImg"><img
                             src="assets/icons/asignarCliente.svg"><br>Asignar cliente</button>
                     <div id="datosCliente" class="datosCliente">
-                        <label for="alias" id="aliasLbl" class="aliasLbl formLbl">ALIAS</label><input type="text"
+                        <label id="aliasLbl" class="aliasLbl formLbl">ALIAS</label><input type="text"
                             id="aliasInput" class="aliasInput" placeholder="Introduce un alias">
-                        <label for="cliente" id="clienteLbl" class="clienteLbl formLbl">CLIENTE</label><input
+                        <label id="clienteLbl" class="clienteLbl formLbl">CLIENTE</label><input
                             type="text" id="clienteInput" class="clienteInput" placeholder="Introduce nombre cliente"
                             required>
-                        <label for="numMesa" id="numMesaLbl" class="numMesaLbl formLbl">Nº MESA</label><input
+                        <label  id="numMesaLbl" class="numMesaLbl formLbl">Nº MESA</label><input
                             type="text" id="numMesaInput" class="numMesaInput" placeholder="Introducir Nº Mesa"
                             required>
-                        <label for="comensales" id="comensalesLbl"
+                        <label  id="comensalesLbl"
                             class="comensalesLbl formLbl">COMENSALES</label><input type="text" id="comensalesInput"
                             class="comensalesInput" placeholder="Introducir Nº Comensales" required>
-                        <label for="grCocina" id="grCocinaLbl" class="grCocinaLbl formLbl">GR. COCINA</label><input
+                        <label id="grCocinaLbl" class="grCocinaLbl formLbl">GR. COCINA</label><input
                             type="text" id="grCocinaInput" class="grCocinaInput" placeholder="Introducir Gr Cocina"
                             required>
                     </div>
@@ -61,7 +61,7 @@
             <div id="pantallaCarrito" class="pantallaCarrito">
                 <table>
                     <tr>
-                        <th>Artículo</th>
+                        <th>Visor Artículo</th>
                         <th>Uds.</th>
                         <th>Precio</th>
                         <th>Total</th>
@@ -100,73 +100,10 @@
         </div>
         <!-- Contenedor Derecha, categorias y productos -->
         <div id="contenedorDer" class="contenedorDer">
-            <div id="contenedorCategorias" class="contenedorCategorias">
-                <div class="itemCategorias"><img src="assets/img/refrescos.jpeg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">REFRESCOS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
-                <div class="itemCategorias"><img src="assets/img/cerveza.jpg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">CERVEZAS</p>
-                </div>
+            <div id="contenedorCategorias" class="contenedorCategorias">                
             </div>
             <!-- para el scroll acuerdate de en el css poner overflow: auto -->
-            <div id="contenedorProductos" class="contenedorProductos">
-                <div class="itemCategorias"><img src="assets/img/refrescos.jpeg" class="imagenCategorias"
-                        alt="Imagen de refrescos">
-                    <p class="imagenTexto">REFRESCOS</p>
+            <div id="contenedorProductos" class="contenedorProductos">               
                 </div>
             </div>
         </div>

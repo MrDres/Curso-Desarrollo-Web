@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Examen prático TPV" />
+    <meta name="author" content="André M. Santamaría Regal" />
+    <meta name="copyright" content="Copyright" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+    <title>Examen Práctico TPV</title>
+</head>
+
+<body>
+    <!-- Defino un contenedor main de la web -->
+    <main id="contenedorMain" class="contenedorMain">
+        <!-- Contenedor de la Izquierda -->
+        <div id="contenedorIzq" class="contenedorIzq">
+            <div id="contenedorCliente" class="contenedorCliente">
+                <!-- Formulario de datos de cliente, decidí que el alias no sea obligatorio ya que puede ser una perdida de tiempo rellenarlo en momento de mucha carga de trabajo, en versiones con base de datos se podria hacer un deplegable de los alias que rellene los datos del form -->
+                <form id="formCliente" class="formCliente">
+                    <button id="enviarFormClient" class="enviarFormClient btnImg"><img
+                            src="assets/icons/asignarCliente.svg"><br>Asignar cliente</button>
+                    <div id="datosCliente" class="datosCliente">
+                        <label id="aliasLbl" class="aliasLbl formLbl">ALIAS</label><input type="text"
+                            id="aliasInput" class="aliasInput" placeholder="Introduce un alias">
+                        <label id="clienteLbl" class="clienteLbl formLbl">CLIENTE</label><input
+                            type="text" id="clienteInput" class="clienteInput" placeholder="Introduce nombre cliente"
+                            required>
+                        <label  id="numMesaLbl" class="numMesaLbl formLbl">Nº MESA</label><input
+                            type="text" id="numMesaInput" class="numMesaInput" placeholder="Introducir Nº Mesa"
+                            required>
+                        <label  id="comensalesLbl"
+                            class="comensalesLbl formLbl">COMENSALES</label><input type="text" id="comensalesInput"
+                            class="comensalesInput" placeholder="Introducir Nº Comensales" required>
+                        <label id="grCocinaLbl" class="grCocinaLbl formLbl">GR. COCINA</label><input
+                            type="text" id="grCocinaInput" class="grCocinaInput" placeholder="Introducir Gr Cocina"
+                            required>
+                    </div>
+                </form>
+            </div>
+            <!-- Utilizamos una pantalla que muestre los productos añadidos al pedido (carrito) -->
+            <div id="contenedorCarrito" class="contenedorCarrito">
+                <table>
+                    <tr>
+                        <th>Artículo</th>
+                        <th>Uds.</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>Objeto de prueba</td>
+                        <td>2</td>
+                        <td>21</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="pantallaCarrito" class="pantallaCarrito">
+                <table>
+                    <tr>
+                        <th>Visor Artículo</th>
+                        <th>Uds.</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- Calculadora -->
+            <div class="calculadora">
+                <input type="text" id="pantallaCalculadora" class="pantallaCalculadora" placeholder="0" disabled>
+                <div class="botones">
+                    <button onclick="agregar('7')" class="calculadoraBtn">7</button>
+                    <button onclick="agregar('8')" class="calculadoraBtn">8</button>
+                    <button onclick="agregar('9')" class="calculadoraBtn">9</button>
+                    <button onclick="operar('/')" class="calculadoraBtn">/</button>
+                    <button onclick="agregar('4')" class="calculadoraBtn">4</button>
+                    <button onclick="agregar('5')" class="calculadoraBtn">5</button>
+                    <button onclick="agregar('6')" class="calculadoraBtn">6</button>
+                    <button onclick="operar('*')" class="calculadoraBtn">*</button>
+                    <button onclick="agregar('1')" class="calculadoraBtn">1</button>
+                    <button onclick="agregar('2')" class="calculadoraBtn">2</button>
+                    <button onclick="agregar('3')" class="calculadoraBtn">3</button>
+                    <button onclick="operar('-')" class="calculadoraBtn">-</button>
+                    <button onclick="agregar('0')" class="calculadoraBtn">0</button>
+                    <button onclick="agregar('.')" class="calculadoraBtn">.</button>
+                    <button onclick="calcular()" class="calculadoraBtn">=</button>
+                    <button onclick="operar('+')" class="calculadoraBtn">+</button>
+                    <button onclick="limpiar()" class="calculadoraBtn calculadoraLimpiarBtn">C</button>
+                </div>
+            </div>
+        </div>
+        <!-- Contenedor Derecha, categorias y productos -->
+        <div id="contenedorDer" class="contenedorDer">
+            <div id="contenedorCategorias" class="contenedorCategorias">                
+            </div>
+            <!-- para el scroll acuerdate de en el css poner overflow: auto -->
+            <div id="contenedorProductos" class="contenedorProductos">               
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- Cambios en el footer realizados pasar de tabla a grid para mejorar la responsividad, para CSS las label son clase labelFooter y las casillas de datos son datoFooter -->
+        <div id="footerGrid" class="footerGrid">
+            <label id="cajaLbl" class="labelFooter">CAJA ACTUAL</label>
+            <label id="fechaHoraLbl" class="datoFooter">la hora</label>
+            <label id="turnoLbl" class="labelFooter">TURNO ACTUAL</label>
+            <label id="turnoDato" class="datoFooter">noche</label>
+            <label id="empleadoLbl" class="labelFooter">EMPLEADO</label>
+            <label id="empleadoDato" class="datoFooter">empleado</label>
+            <label id="terminalLbl" class="labelFooter">TERMINAL</label>
+            <label id="terminalDato" class="datoFooter">10</label>
+            <label id="tarifaActivaLbl" class="labelFooter">TARIFA ACTIVA</label>
+            <label id="tarifaDato" class="datoFooter">sala</label>
+            <label id="salonLbl" class="labelFooter">SALÓN</label>
+            <label id="salonDato" class="datoFooter">principal</label>
+        </div>
+    </footer>
+</body>
+
+</html>

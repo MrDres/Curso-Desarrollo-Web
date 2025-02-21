@@ -8,31 +8,59 @@ document.addEventListener("DOMContentLoaded", function () {
   let pantalla = document.getElementById("pantallaCalculadora");
   //Array con productos
   const productos = [
-    { nombre: "Producto 1", cantidad: 10, precio: 10},
-    { nombre: "Producto 2", cantidad: 10, precio: 15},
-    { nombre: "Producto 3", cantidad: 10, precio: 7},
-    { nombre: "Producto 4", cantidad: 10, precio: 5},
-    { nombre: "Producto 5", cantidad: 10, precio: 5},
-    { nombre: "Producto 6", cantidad: 10, precio: 5},
-    { nombre: "Producto 7", cantidad: 10, precio: 5},
-    { nombre: "Producto 8", cantidad: 10, precio: 5},
-    { nombre: "Producto 9", cantidad: 10, precio: 5},
-    { nombre: "Producto 10", cantidad: 10, precio: 5},
-    { nombre: "Producto 11", cantidad: 10, precio: 5},
-    { nombre: "Producto 12", cantidad: 10, precio: 5}
+    { nombre: "La Casera", cantidad: 10, precio: 10, url: "assets/img/lacasera.png", categoria: "Refresco" },
+    { nombre: "Fanta", cantidad: 10, precio: 15, url: "assets/img/fanta.jpg" },
+    { nombre: "Fanta Limon", cantidad: 10, precio: 7, url: "assets/img/fantalimon.jpg", categoria: "Refresco" },
+    { nombre: "Agua Vichy", cantidad: 10, precio: 5, url: "assets/img/vichy-catalan.jpg", categoria: "Agua" },
+    { nombre: "Red Bull", cantidad: 10, precio: 6, url: "assets/img/redBull.png", categoria: "Refresco" },
+    { nombre: "Producto 6", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 7", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 8", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 9", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 10", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 11", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 12", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 13", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 14", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Refresco" },
+    { nombre: "Producto 15", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Agua" },
+    { nombre: "Producto 16", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Cervezas" },
+    { nombre: "Producto 17", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Cafes" },
+    { nombre: "Producto 18", cantidad: 10, precio: 5, url: "assets/img/refrescos.jpeg", categoria: "Cafes" }
   ];
   //Array con categorias
   const categorias = [
-    { nombre: "Refresco", url: "assets/img/refrescos.jpg"},
-    { nombre: "Cervezas", url: "assets/img/cerveza.jpg"},
+    { nombre: "Refresco", url: "assets/img/refrescos.jpeg" },
+    { nombre: "Cervezas", url: "assets/img/cerveza.jpg" },
+    { nombre: "Agua", url: "assets/img/agua.jpg" },
+    { nombre: "Cafes", url: "assets/img/cafes.jpg" },
+    { nombre: "Whiskeys", url: "assets/img/whiskeys.jpg" },
+    { nombre: "Vinos", url: "assets/img/vinos.jpg" },
+    { nombre: "Bocadillos", url: "assets/img/bocadillos-VP.jpg" },
+    { nombre: "Tapas", url: "assets/img/tapas.jpg" },
+    { nombre: "Platos", url: "assets/img/platos.webp" },
+    { nombre: "Desayunos", url: "assets/img/desayunos_1600x900.jpg"},
+    { nombre: "Licores", url: "assets/img/licores.jpg"}
   ];
+
   
+  cargarCategorias(categorias);
+  cargarProductos(productos);
+
+  const btnAñadirCarrito=document.getElementById("btnAñadir");
+  btnAñadirCarrito.addEventListener("click", function(){
+    alert("has clickao");
+  });
 
   // Llamar a la función para actualizar la hora cuando la página se carga
   actualizarHora();
 
   // Actualizar la hora cada segundo
   setInterval(actualizarHora, 1000);
+
+
+
+
+
   // Inicio de las funciones de la calculadora
   function agregar(valor) {
     pantalla.value += valor;
@@ -65,3 +93,64 @@ document.addEventListener("DOMContentLoaded", function () {
     fechaHoraLbl.textContent = `${dia}/${mes}/${año} ${hora}:${minutos}:${segundos}`;
   }
 });
+
+//Funcion cargar categorias
+function cargarCategorias(elemento) {
+  for (let i = 0; i < elemento.length; i++) {
+    //creamos el div que contendra todo el contenido
+    let item = document.createElement("div");
+    item.className = "itemCategorias";
+    //creamos la etiqueta de la imagen
+    let imagen = document.createElement("img")
+    imagen.className = "imagenCategorias";
+    imagen.src = elemento[i].url;
+    imagen.alt = elemento[i].nombre;
+    //creamos el texto de la categoria
+    let texto = document.createElement("p");
+    texto.className = "textoCategorias";
+    texto.textContent = elemento[i].nombre;
+    //creamos un boton de añadir carrito
+    let botonFiltrar = document.createElement("button");
+    botonFiltrar.className = "btnFiltrar";
+    botonFiltrar.textContent = "Pulsar para filtrar";
+    //añadimos la imagen y el texto al div y el boton
+    item.appendChild(imagen);
+    item.appendChild(texto);
+    item.appendChild(botonFiltrar);
+    //añadimos el div al contenedor
+    contenedorCategorias.appendChild(item);
+  }
+};
+
+function cargarProductos(elemento){
+  for (let i=0; i<elemento.length; i++){
+    //creamos el div que contendra todo el contenido
+    let item = document.createElement("div");
+    item.className = "itemProductos";
+    //creamos la etiqueta de la imagen
+    let imagen = document.createElement("img")
+    imagen.className = "imagenProductos";
+    imagen.src = elemento[i].url;
+    imagen.alt = elemento[i].nombre;
+    //creamos el texto de la categoria
+    let texto = document.createElement("p");
+    texto.className = "textoProductos";
+    texto.textContent = elemento[i].nombre;
+    //creamos un boton de añadir carrito
+    let botonAñadir = document.createElement("button");
+    botonAñadir.className = "btnAñadir";
+    botonAñadir.textContent = "Añadir Carrito";
+    botonAñadir.id = "btnAñadir";
+    //añadimos la imagen y el texto al div y el boton
+    item.appendChild(imagen);
+    item.appendChild(texto);
+    item.appendChild(botonAñadir);
+    //añadimos el div al contenedor
+    contenedorProductos.appendChild(item);  
+  }
+}
+
+function añadirCarrito(){
+  alert("has clickao");
+}
+
