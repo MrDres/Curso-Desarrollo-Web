@@ -43,22 +43,18 @@
             </div>
             <!-- Utilizamos una pantalla que muestre los productos añadidos al pedido (carrito) -->
             <div id="contenedorCarrito" class="contenedorCarrito">
-                <table>
+                <table id="tablaCarrito" class="tablaCarrito">
                     <tr>
                         <th>Artículo</th>
+                        <th style="min-width:2rem;"></th>
                         <th>Uds.</th>
                         <th>Precio</th>
-                        <th>Total</th>
-                    </tr>
-                    <tr>
-                        <td>Objeto de prueba</td>
-                        <td>2</td>
-                        <td>21</td>
-                        <td>0</td>
-                    </tr>
+                        <th>Total</th>                        
+                    </tr>                                        
                 </table>
+                <button id="pagarPedido" class="pagarPedido btnImg"><img src="assets/icons/impresoraFill.svg">PAGAR</button>
             </div>
-            <div id="pantallaCarrito" class="pantallaCarrito">
+            <!-- <div id="pantallaCarrito" class="pantallaCarrito">
                 <table>
                     <tr>
                         <th>Visor Artículo</th>
@@ -73,7 +69,7 @@
                         <td></td>
                     </tr>
                 </table>
-            </div>
+            </div> -->
             <!-- Calculadora -->
             <div class="calculadora">
                 <input type="text" id="pantallaCalculadora" class="pantallaCalculadora" placeholder="0" disabled>

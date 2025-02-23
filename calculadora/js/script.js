@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.limpiar = limpiar;
 
   let pantalla = document.getElementById("pantallaCalculadora");
+  const tablaCarrito = document.getElementById("tablaCarrito");
+  const  pagar = document.getElementById("pagarPedido");
   //Array con productos
   const productos = [
     { nombre: "La Casera", cantidad: 10, precio: 10, url: "assets/img/lacasera.png", categoria: "Refresco" },
@@ -46,10 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   cargarCategorias(categorias);
   cargarProductos(productos);
 
-  const btnAñadirCarrito=document.getElementById("btnAñadir");
-  btnAñadirCarrito.addEventListener("click", function(){
-    alert("has clickao");
-  });
+  
 
   // Llamar a la función para actualizar la hora cuando la página se carga
   actualizarHora();
@@ -140,7 +139,10 @@ function cargarProductos(elemento){
     let botonAñadir = document.createElement("button");
     botonAñadir.className = "btnAñadir";
     botonAñadir.textContent = "Añadir Carrito";
-    botonAñadir.id = "btnAñadir";
+    //pasamos los datos a la funcion añadirCarrito
+    botonAñadir.onclick = function(){
+      añadirCarrito(elemento[i].nombre, 1, elemento[i].precio);
+    }    
     //añadimos la imagen y el texto al div y el boton
     item.appendChild(imagen);
     item.appendChild(texto);
@@ -150,7 +152,44 @@ function cargarProductos(elemento){
   }
 }
 
-function añadirCarrito(){
-  alert("has clickao");
+function añadirCarrito(nombre, cantidad, precio){
+  let fila= document.createElement("tr");
+  let celdaArticulo = document.createElement("td");
+  let celdaBoton = document.createElement("td");
+  let celdaUnidades = document.createElement("td");
+  let celdaPrecio = document.createElement("td");
+  let celdaTotal = document.createElement("td");
+  let botonEliminar = document.createElement("button");
+  botonEliminar.textContent = "Eliminar";
+  botonEliminar.className = "btnEliminarFila";
+  botonEliminar.onclick = function(){
+    fila.remove();
+  };
+  celdaArticulo.textContent = nombre;
+  celdaPrecio.textContent = precio;
+  celdaUnidades.textContent = cantidad;
+  celdaTotal.textContent = eval(celdaPrecio.textContent * celdaUnidades.textContent);
+  fila.appendChild(celdaArticulo);
+  fila.appendChild(celdaBoton);
+  celdaBoton.appendChild(botonEliminar);
+  fila.appendChild(celdaUnidades);
+  fila.appendChild(celdaPrecio);
+  fila.appendChild(celdaTotal);  
+  tablaCarrito.appendChild(fila);
 }
+
+pagar.addEventListener('click', ()=>{ 
+  let total = 0;
+  let filas = tablaCarrito.rows;
+  for (let i=1; i<filas.length; i++){
+    total += eval(filas[i].cells[4].textContent);
+  }
+  alert("El total de la compra es: " + total);
+  while (tablaCarrito.rows.length > 1){
+    tablaCarrito.deleteRow(1);
+  }
+});
+ 
+
+
 

@@ -30,6 +30,7 @@ th {
   padding: 5px;
   height: 1rem;
   text-align: center;
+  
 }
 
 th {
@@ -39,6 +40,7 @@ th {
 
 td {
   background-color: white;
+  
 }
 
 /* CONTENEDOR IZQUIERDA */
@@ -75,7 +77,22 @@ td {
   height: 80px;
 }
 /* Fin CSS de la tarjeta de agregar clientes */
+.contenedorCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.contenedorCarrito button{
+  background-color: var(--verdeClaro);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: center;  
+}
 /* CSS de la calculadora */
 .calculadora {
   background: #fff;
@@ -84,6 +101,7 @@ td {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 50%;
+  margin-top: 1rem;
 }
 
 .pantallaCalculadora {
