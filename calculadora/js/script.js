@@ -176,7 +176,7 @@ function añadirCarrito(nombre, cantidad, precio){
   fila.appendChild(celdaPrecio);
   fila.appendChild(celdaTotal);  
   tablaCarrito.appendChild(fila);
-}
+};
 
 pagar.addEventListener('click', ()=>{ 
   let total = 0;
