@@ -92,8 +92,8 @@ console.log(arrayConcat);
 
 let arrayOriginal=[1,2,3,4,5,6,7,8,9];
 let arrayCopia= arrayOriginal.slice(0,4);//el primer numero es de donde empieza a extraer y el segundo es hasta donde extrae sin incluirlo
-console.log(arrayCopia);
-console.log(arrayOriginal);
+console.log("este es la copia "+arrayCopia);
+console.log("este es el original "+arrayOriginal);
 
 // ORDENAR Y MANIPULAR
 
