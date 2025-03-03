@@ -31,16 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
   eliminarBtn.addEventListener("click", ()=>{
     
   })
-  contrasteBtn.addEventListener("click", () => {
+  contrasteBtn.addEventListener("click", function() {
     body.classList.toggle("altoContraste");
   });
 
-  aumentarTexto.addEventListener("click", () => {
+  aumentarTexto.addEventListener("click", function() {
     body.style.fontSize = "4.5rem";
     
   });
 
-  disminuirTexto.addEventListener("click", () => {
+  disminuirTexto.addEventListener("click", function() {
     body.style.fontSize = "1rem";
   });
 
