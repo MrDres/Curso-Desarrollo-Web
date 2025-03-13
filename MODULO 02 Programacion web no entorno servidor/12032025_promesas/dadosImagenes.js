@@ -57,7 +57,7 @@ function ganaste(){
 }
 
 function perdiste(){
-    let perder= document.createElement("img");
+    let perder= document.createElement("img");   
     perder.src=`assets/dados/perder.png`;
     perder.width=100;
     perder.height=100;
