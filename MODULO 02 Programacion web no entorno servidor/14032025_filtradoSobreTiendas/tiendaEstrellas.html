@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_grid.css">
+    <title>Tienda con Estrellitas</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="buscador" placeholder="Buscar productos...">
+        <select id="filtro-categoria">
+            <option value="todos">Todos</option>
+            <option value="Ordendores">Ordenadores</option>
+            <option value="Libros">Libros</option>
+            <option value="Acessorios">Accesorios</option>
+        </select>
+    </div>
+    <div class="grid_container" id="productos_container">
+    </div>
+    <script src="tiendaEstrellas.js"></script>
+    <script src="grid.js"></script>
+    <script src="buscador.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+JSON
+-Son un formato de texto ligero, facil de leer que se utiliza para almacenar y transmitir datos estructurados.
+-Es muy utilizado para aplicaciones web y moviles para intercambiar datos entre un servidor y un cliente, o para almacenar configuraciones y datos de manera organizada.
+-Es un formato basado en texto que sigue una estructura de pares clave-valor y listas ordenadas
+-Es similar a la forma en que se escriben los objetos en javascript, pero es independiente del lenguaje.
+
+Sintaxis:
+"nombre":"Juan",
+"edad":30,
+"esEstudiante":false,
+"hobbies": ["leer","correr","programar"],
+"direccion":{
+    "calle": "calle Falsa 123",
+    "ciudad: "Madrid"
+}
+Objetos
+-Se representan entre llaves {} y contienen pares clave-valor
+-Las claves son cadenas de texto entre comillas
+
+Arrays
+Se representan entre corchetes [ valor1, valor2, valor3]
+
+Tipos de datos admitidos en JSON
+-cadenas de texto
+-numeros
+-booleanos
+-Arrays
+-Objetos {clave:valor}
+-null
+
+Utilidad del JSON 
+-Intercambio de datos: Es un estanar para enviar y recibir datos en aplicaciones
+-Almacenamiento de configuraciones: Se pueden utilizar para guardar configuraciones o preferencias.
+-APIs: Muchas apis modernas devuelven los datos en formato JSON
+
+Bases de datos: Lo usan algunas bases de datos como mongoDB etc...
+
+Convertir un objeto Javascript a Json
+Usa JSON.stringify() para convertir un objeto Javascript en una cadena JSON
+const objeto = {nombre:"juan",edad:20 };
+
+Convertir JSON en objeto Javascript
+Usa JSON.parse()
+const jsonString = {nombre:"juan",edad:20 };
+const objeto = JSON.parse(jsonString);
+console.log(objeto.nombre); //Juan

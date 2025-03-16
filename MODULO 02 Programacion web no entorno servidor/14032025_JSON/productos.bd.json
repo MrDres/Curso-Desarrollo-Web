@@ -1,0 +1,52 @@
+[
+    {
+        "nombre": "Macbook",
+        "precio": 1200,
+        "stock": 25,
+        "marca": "Asus",
+        "modelo": "Rogue 27X",
+        "tipo": "ordenador",
+        "imagen":"https://placehold.co/150?text=Macbook"
+    },
+    {
+        "nombre": "Pc",
+        "precio": 800,
+        "stock": 50,
+        "marca": "Msi",
+        "modelo": "Stealth",
+        "tipo": "ordenador",
+        "imagen":"https://placehold.co/150?text=Pc"
+    },
+    {
+        "nombre": "El cuervo",
+        "precio": 25,
+        "stock": 100,
+        "autor": "Edgar Allan Poe",
+        "editorial": "Planeta",
+        "tipo": "libro",
+        "imagen":"https://placehold.co/150?text=El cuervo"
+    },
+    {
+        "nombre": "El Gato",
+        "precio": 25,
+        "stock": 11,
+        "autor": "Manolo Cifu",
+        "editorial": "Planeta",
+        "tipo": "libro",
+        "imagen":"https://placehold.co/150?text=El Gato"
+    },
+    {
+        "nombre": "Pulsera",
+        "precio": 12,
+        "stock": 300,
+        "tipo": "accesorio",
+        "imagen":"https://placehold.co/150?text=Pulsera"
+    },
+    {
+        "nombre": "Collar",
+        "precio": 12,
+        "stock": 300,
+        "tipo": "accesorio",
+        "imagen":"https://placehold.co/150?text=Collar"
+    }
+]
