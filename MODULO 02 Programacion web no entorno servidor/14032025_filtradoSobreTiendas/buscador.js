@@ -1,6 +1,9 @@
 
 let buscadorText = document.getElementById("buscador");
 let selector = document.getElementById("filtro-categoria");
+const productosAux= cargarProductos();
+console.log(productosAux);
+
 
 buscadorText.addEventListener("keydown", function(e){
     if (e.key === 'Enter'){    
@@ -9,7 +12,7 @@ buscadorText.addEventListener("keydown", function(e){
 }
 })
 
-function filtrarProductosBuscador(producto){
+function filtrarProductosBuscador(texto,productos){
     alert(producto)   
     alert(productos);
 
