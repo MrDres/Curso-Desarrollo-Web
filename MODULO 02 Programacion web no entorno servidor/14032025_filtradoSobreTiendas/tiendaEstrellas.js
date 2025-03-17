@@ -82,16 +82,17 @@ async function cargarProductos() {
         const productos = data.map(item => {
             switch (item.tipo) {
                 case "ordenador":
-                    return new Ordenadores(item.nombre, item.precio, item.cantidadEnStock, item.marca, item.modelo, item.imagen);
+                    return new Ordenadores(item.nombre, item.precio, item.stock, item.marca, item.modelo, item.imagen);
                 case "libro":
-                    return new Libros(item.nombre, item.precio, item.cantidadEnStock, item.autor, item.editorial, item.imagen);
+                    return new Libros(item.nombre, item.precio, item.stock, item.autor, item.editorial, item.imagen);
                 case "accesorio":
-                    return new Accesorios(item.nombre, item.precio, item.cantidadEnStock, item.tipo, item.imagen);
+                    return new Accesorios(item.nombre, item.precio, item.stock, item.tipo, item.imagen);
                 default:
                     throw new Error(`Tipo de producto no valido ${item.tipo}`);
             }
         });
         //Devolver el array de productos
+        
         return productos;
     }catch (error){
         console.error(`Error al cargar los productos: ${error}`);
@@ -140,8 +141,6 @@ function mostrarProducto(productos) {
     //     fila.textContent = `Nombres: ${productos.nombre}`;
     //     listaDatosProd.appendChild(fila);
     // }
-
-
     let boton = document.createElement("button");
     boton.classList.add("boton");
     boton.textContent = "Ver mas";
@@ -176,4 +175,3 @@ cargarProductos().then(productos => {
         mostrarProducto(producto);
     });
 })
-
