@@ -1,8 +1,7 @@
 
 let buscadorText = document.getElementById("buscador");
 let selector = document.getElementById("filtro-categoria");
-let chismes=  cargarProductos();
-console.log(chismes);
+
 buscadorText.addEventListener("keydown", function(e){
     if (e.key === 'Enter'){    
     let textoValor=buscadorText.value;
@@ -10,13 +9,10 @@ buscadorText.addEventListener("keydown", function(e){
 }
 })
 
-function filtrarProductosBuscador(texto,producto){
-    // if (producto.tipo === texto){
-    //     alert("chusca")
-    // }
-    alert(producto)
+function filtrarProductosBuscador(producto){
+    alert(producto)   
+    alert(productos);
 
-   
 }
 
 

@@ -117,7 +117,7 @@ async function cargarProductos() {
 function mostrarProducto(productos) {
     let gridItem = document.createElement("div");
     gridItem.classList.add("grid-item");
-
+    
     let aGrid = document.createElement("a");
     aGrid.href = "https://www.ejemplo.com";
 
