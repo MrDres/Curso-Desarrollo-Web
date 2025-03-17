@@ -132,7 +132,7 @@ function mostrarProducto(productos) {
     let datosPrecio=document.createElement("li");
     datosPrecio.textContent=`Precio: ${productos.precio}`;
     let datosStock=document.createElement("li");
-    datosStock.textContent=`Stock: ${productos.cantidadEnStock}`;
+    datosStock.textContent=`Stock: ${productos.stock}`;
     listaDatosProd.appendChild(datosNombre);
     listaDatosProd.appendChild(datosPrecio);
     listaDatosProd.appendChild(datosStock);
@@ -170,8 +170,8 @@ function mostrarProducto(productos) {
 
 //Cargar los productos y mostrarlos al iniciar la página
 
-cargarProductos().then(productos => {
-    productos.forEach(producto => {
-        mostrarProducto(producto);
-    });
-})
+// // cargarProductos().then(productos => {
+// //     productos.forEach(producto => {
+// //         mostrarProducto(producto);
+// //     });
+// })
