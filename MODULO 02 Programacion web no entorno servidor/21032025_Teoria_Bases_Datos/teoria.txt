@@ -1,0 +1,14 @@
+SQL: Gestionar y manipular datos relacionales, filas y columnas
+
+Componentes: 
+-Tablas : Estructuras que almacen los datos en filas y columnas.
+Columnas(Atributos): Campos de la Tablas(nombre,edad,etc...)ç
+Filas (Registros): entradas individuales
+Claves Primarias: Identificadores unicos en cada fila de una Tablas
+Claves Foraneas: Columnas que establecen las relaciones entre tablas
+
+REGLAS:
+-- Crea una nueva tabla --
+CREATE TABLE usuario (
+    id INT
+)

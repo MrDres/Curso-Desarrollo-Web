@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="André Manuel Santamaría Regal">
+    <title>Tienda</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tienda Virtual</h1>
+    <div id="productos"></div>
+    <div id="carrito">
+        <h2>Carrito de Compra</h2>
+        <ul id="lista-carrito"></ul>
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </div>
+    <p id="mensaje"></p>
+</body>
+<script>
+    fetch('http://localhost:5501/productos')
+        .then(response => response.json())
+        .then(data => {
+            const productosContainer = document.getElementById('productos');
+            data.forEach(producto => {
+                const div = document.createElement('div');
+                div.className = 'producto';
+                div.innerHTML =
+                    `<h3>${producto.nombre}</h3>
+            <p>Precio: ${producto.precio} €</p>
+            <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>`;
+                productosContainer.appendChild(div);
+
+            });
+        })
+        .catch(error => console.error('Error: ', error));
+
+    //carrito de compra
+    let carrito = [];
+
+    function agregarAlCarrito(idProducto) {
+        //   fetch(`http://localhost:5501/productos/${idProducto}`)
+        //       .then(response => response.json())
+        //       .then(producto =>{
+        //           carrito.push(producto);
+        //           actualizarCarrito();
+        //   })
+        //   .catch(error => console.error('Error:', error));
+        //}
+        fetch(`http://localhost:5501/productos/${idProducto}`)
+            .then(response => response.json())
+            .then(producto => {
+                carrito.push(producto);
+                actualizarCarrito();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function actualizarCarrito() {
+        const listaCarrito = document.getElementById('lista-carrito');
+        listaCarrito.innerHTML = '';
+        carrito.forEach(producto => {
+            const li = document.createElement('li');
+            li.textContent = ` ${producto.nombre} - ${producto.precio} €`;
+            listaCarrito.appendChild(li);
+        })
+    }
+
+    //finalizar la compra
+    document.getElementById('finalizar-compra').addEventListener("click", () => {
+        fetch('http://localhost:5501/finalizar-compra', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(carrito)
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('mensaje').textContent = data.mensaje;
+                carrito = []; //vaciar carrito
+                actualizarCarrito();
+            })
+            .catch(error => console.error('Error:', error));
+    })
+</script>
+
+</html>

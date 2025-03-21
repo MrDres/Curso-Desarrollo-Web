@@ -6,7 +6,7 @@ class Producto {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidadEnStock = cantidadEnStock;
-        
+
     }
     informacion() {
         console.log(`Nombre: ${this.nombre}`);
@@ -19,7 +19,7 @@ class Ordenadores extends Producto {
     constructor(nombre, precio, cantidadEnStock, marca, modelo, imagen) {
         super(nombre, precio, cantidadEnStock);
         this.marca = marca;
-        this.modelo = modelo;    
+        this.modelo = modelo;
         this.imagen = imagen;
 
     }
@@ -36,7 +36,7 @@ class Libros extends Producto {
     constructor(nombre, precio, cantidadEnStock, autor, editorial, imagen) {
         super(nombre, precio, cantidadEnStock);
         this.autor = autor;
-        this.editorial = editorial;        
+        this.editorial = editorial;
         this.imagen = imagen;
     }
     informacion() {
@@ -49,10 +49,10 @@ class Libros extends Producto {
 }
 
 class Accesorios extends Producto {
-    constructor(nombre, precio, cantidadEnStock, tipo,imagen) {
+    constructor(nombre, precio, cantidadEnStock, tipo, imagen) {
         super(nombre, precio, cantidadEnStock);
         this.tipo = tipo;
-        this.imagen= imagen;
+        this.imagen = imagen;
     }
     informacion() {
         console.log(`Nombre: ${this.nombre}`);
@@ -92,12 +92,12 @@ async function cargarProductos() {
             }
         });
         //Devolver el array de productos
-        
+
         return productos;
-    }catch (error){
+    } catch (error) {
         console.error(`Error al cargar los productos: ${error}`);
     }
-    
+
 }
 
 // console.log("Ordenador1");
@@ -117,7 +117,7 @@ async function cargarProductos() {
 function mostrarProducto(productos) {
     let gridItem = document.createElement("div");
     gridItem.classList.add("grid-item");
-    
+
     let aGrid = document.createElement("a");
     aGrid.href = "https://www.ejemplo.com";
 
@@ -127,12 +127,12 @@ function mostrarProducto(productos) {
 
     let listaDatosProd = document.createElement("ul");
     listaDatosProd.setAttribute("id", "lista_datos_productos");
-    let datosNombre=document.createElement("li");
-    datosNombre.textContent=`Nombre: ${productos.nombre}`;
-    let datosPrecio=document.createElement("li");
-    datosPrecio.textContent=`Precio: ${productos.precio}`;
-    let datosStock=document.createElement("li");
-    datosStock.textContent=`Stock: ${productos.stock}`;
+    let datosNombre = document.createElement("li");
+    datosNombre.textContent = `Nombre: ${productos.nombre}`;
+    let datosPrecio = document.createElement("li");
+    datosPrecio.textContent = `Precio: ${productos.precio}`;
+    let datosStock = document.createElement("li");
+    datosStock.textContent = `Stock: ${productos.stock}`;
     listaDatosProd.appendChild(datosNombre);
     listaDatosProd.appendChild(datosPrecio);
     listaDatosProd.appendChild(datosStock);
@@ -170,8 +170,8 @@ function mostrarProducto(productos) {
 
 //Cargar los productos y mostrarlos al iniciar la página
 
-// // cargarProductos().then(productos => {
-// //     productos.forEach(producto => {
-// //         mostrarProducto(producto);
-// //     });
+// cargarProductos().then(productos => {
+// productos.forEach(producto => {
+// mostrarProducto(producto);
+// });
 // })

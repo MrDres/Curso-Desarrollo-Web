@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .imagenPerralleira {
+            max-width: 100px;
+            max-height: 150px;
+            min-height: 150px;
+            min-width: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Tienda Virtual</h1>
+    <div id="productos"></div>
+
+    <div class="carrito">
+        <h2>Carrito de Compra</h2>
+        <ul id="lista-carrito"></ul>
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </div>
+
+    <p id="mensaje"></p>
+
+    <script>
+        // Obtener productos del servidor
+        fetch('http://localhost:5500/productos')
+            .then(response => response.json())
+            .then(data => {
+                const productosContainer = document.getElementById('productos');
+                data.forEach(producto => {
+                    const div = document.createElement('div');
+                    div.className = 'producto';
+                    div.innerHTML = `
+                        <h3>${producto.nombre}</h3>
+                        <img id="imagenProducto" src="${producto.img}${producto.nombre}" alt="${producto.nombre}"></img>
+                        <img class="imagenPerralleira" src="${producto.img2}${producto.nombre}.jpg" alt="${producto.nombre}"></img>
+                        <p>Precio: ${producto.precio} €</p>
+                        <p>Stock: ${producto.stock} Ud</p>
+                        <button onclick="agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+                    `;
+                    productosContainer.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+
+        // Carrito de compras
+        let carrito = [];
+
+        function agregarAlCarrito(idProducto) {
+            fetch(`http://localhost:5500/productos/${idProducto}`)
+                .then(response => response.json())
+                .then(producto => {
+                    carrito.push(producto);
+                    actualizarCarrito();
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById('lista-carrito');
+            listaCarrito.innerHTML = '';
+            carrito.forEach(producto => {
+                const li = document.createElement('li');
+                li.textContent = `${producto.nombre} - ${producto.precio} €`;
+                listaCarrito.appendChild(li);
+            });
+        }
+
+        // Finalizar compra
+        document.getElementById('finalizar-compra').addEventListener('click', () => {
+            fetch('http://localhost:5500/finalizar-compra', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(carrito)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('mensaje').textContent = data.mensaje;
+                carrito = []; // Vaciar el carrito
+                actualizarCarrito();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
