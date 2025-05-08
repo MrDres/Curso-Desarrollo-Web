@@ -1,0 +1,24 @@
+{
+  "name": "ejemplo",
+  "version": "1.0.0",
+  "description": "probando node",
+  "main": "app.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "CURSO-DESARROLLO-WEB"
+  },
+  "keywords": [
+    "aprendiendo",
+    "node"
+  ],
+  "author": "André M. Santamaría",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  }
+}

@@ -1,0 +1,7 @@
+1- Descargamos el node de la web oficial, en caso de no tenerlo ya instalado
+    - Para comprobar si esta instalado y su versión, en la consola usamos el comando node -v.
+    - Hacemos lo mismo para el gestor de paquetes npm , usamos el comando npm -v. 
+
+Al instalarlo hay que estar atento a marcar la caja de las herramientas opcionales (act tools ?).
+
+Una vez instalado, con el npm , instalamos el gestor de base de datos mysql (npm install mysql), un gestor de entornos virtuales (npm install dotenv), y el  framework express (npm install express).
