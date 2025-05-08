@@ -1,0 +1,78 @@
+-Todo codigo de php debe empezar <?php y se cierra ?>
+
+-Los comentarios de una linea se hacen con // o con #, para mas de una linea /* y se cierra con */.
+
+-Las variable comienzan utilizando el $ , ejemplo $nombreVariable, tiene tipado dinámico (no hace falta declarar el tipo de dato de la variable), es case-sensitive.
+
+-Concatenacion de strings: $saludo="hola, " .$nombre. "!"; El punto . concatena los strings.
+
+-Para mostrar por pantalla algo se utiliza la funcion echo, ejemplo echo $saludo;
+
+-Variable de variables. $a="edad"; echo $$a; (esto mostrara el valor de la variable edad).
+
+-Constantes valores que no se pueden cambiar, por convencion las constantes se declaran el mayusculas, de forma tradicional se hace ejemplos: define("PI", 3.1416); define("NOMBRE_SITIO", "Miweb.com", true); , de forma reciente se hace ejemplo: const IVA = 0.16; 
+Uso de las constantes:
+
+function mostrarIVA(){
+    echo "El IVA es " . IVA;
+};
+mostrarIVA();
+
+-OPERADORES:
+    -Operadores aritméticos: Suma + , Resta -, Multiplicacion *, Division /, Modulo %, Potencia **(2 ** 3 es 2 elevado a 3),  se usan dejando espacio entre los numeros y el operador ( 5 + 4 , 6 * 8)
+
+    -Operadores de asignacion: 
+        $x = 5;
+        $x +=3; (esto es igual a poner $x = $x +3;)
+
+    -Operadores por comparacion(Boolean):
+        $igual = (5 == "5"); esto da true
+        $identico = (5 ==="5"); esto da false porque no son del mismo tipo
+        $diferente = (5 != 3); esto da true
+        $mayorQue = (5 > 3); esto da true
+        $menorQue = (5 < 3); esto da false
+
+    -Operadores lógicos:
+        $and = (true && false); da false
+        $or = (true || false); da true 
+        $not = !true; da false
+    
+-Condicionales:
+    - if else
+        $edad = 18;
+        if (edad >= 18) {
+            echo "Eres mayor de edad";
+        } else {
+            echo "Eres menor de edad";
+        }
+    
+    -multiples condiciones elseif:
+        $nota = 7.5;
+        if (nota >= 9) {
+            echo "Excelente";
+        } elseif (nota >=7) {
+            echo "Bueno";
+        } elseif (nota >= 5) {
+            echo "Aprobado";
+        } else {
+            echo "Suspenso";
+        }
+    
+    -Operador Ternario o if abreviado:
+        $mensaje = ($edad >= 18) ? "Mayor" : "Menor";
+        echor $mensaje;
+
+    -Switch:
+        $diaSemana = "Lunes";
+
+        switch ($diaSemana){
+            case "lunes":
+                echo "Primer ddia de la semana";
+                break;
+            case "viernes":
+                echo "Por fin es viernes";
+                break;
+            default:
+                echo "No estamos dentro del tiempo";
+                
+        }
